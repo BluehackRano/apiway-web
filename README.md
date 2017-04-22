@@ -2,7 +2,7 @@
 
 > Cloud based API Test Runner
 
-## Build Setup
+## Build 
 
 ### Vue
 
@@ -56,3 +56,8 @@ docker tag tower-web-console:latest 539277938309.dkr.ecr.us-west-2.amazonaws.com
 docker push 539277938309.dkr.ecr.us-west-2.amazonaws.com/tower-web-console:latest
 ```
 
+## Deploy
+``` bash
+# docker {TAG}를 인자로 아래와 같이 실행혀면 docker build & push to repository & kubectl rolling-update까지 수행함
+./docker_build.sh {TAG}
+```
