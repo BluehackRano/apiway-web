@@ -1,7 +1,7 @@
 <template>
   <footer class="app-footer">
-    <a href="https://genesisui.com">SimpliQ</a> &copy; 2017 creativeLabs.
-    <span class="float-right">Powered by <a href="https://genesisui.com">GenesisUI</a></span>
+    <a href="https://genesisui.com">ApiWay</a> &copy; 2017 BlueHack Inc.
+    <span class="float-right">Powered by <a href="https://bluehack.net">BlueHack</a></span>
   </footer>
 </template>
 <script>
