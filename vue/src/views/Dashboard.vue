@@ -1,6 +1,6 @@
 <template>
   <div class="animated fadeIn">
-    Hello BlueHack
+    This is ApiWay
   </div>
 </template>
 
