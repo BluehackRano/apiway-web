@@ -17,6 +17,13 @@
 <script>
 export default {
   name: 'dashboard',
+  created: function () {
+    console.log(this.$route.query)
+    if (this.$auth.isAuthenticated()) {
+    } else {
+      this.auth('github')
+    }
+  },
   methods: {
     authLogin: function () {
       let user = {
@@ -74,6 +81,7 @@ export default {
         if (provider === 'github') {
           this_.$http.get('https://api.github.com/user').then(function (response) {
             this_.response = response
+            console.log(response)
           })
         } else if (provider === 'facebook') {
           this_.$http.get('https://graph.facebook.com/v2.5/me', {
