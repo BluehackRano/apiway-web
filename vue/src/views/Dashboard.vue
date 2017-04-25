@@ -9,7 +9,8 @@
 
     <!--<hr />-->
 
-    <button @click="auth('github')" class="button--github">Auth github</button>
+    <button v-if="!this.$auth.isAuthenticated()" @click="auth('github')" class="button--github">Auth github</button>
+    <!--<button @click="auth('github')" class="button&#45;&#45;github">Auth github</button>-->
     <hr />
   </div>
 </template>
@@ -89,10 +90,10 @@ export default {
         this_.$http.get('https://www.googleapis.com/plus/v1/people/me/openIdConnect').then(function (response) {
           this_.response = response
         })
-      } else if (provider === 'twitter') {
-        this_.response = authResponse.body.profile
-      } else if (provider === 'instagram') {
-        this_.response = authResponse
+//      } else if (provider === 'twitter') {
+//        this_.response = authResponse.body.profile
+//      } else if (provider === 'instagram') {
+//        this_.response = authResponse
       } else if (provider === 'bitbucket') {
         this_.$http.get('https://api.bitbucket.org/2.0/user').then(function (response) {
           this_.response = response
@@ -110,7 +111,6 @@ export default {
 
         console.log(this_.$auth.isAuthenticated())
         this.getUser(provider)
-
       }).catch(function (err) {
         this_.response = err
       })
