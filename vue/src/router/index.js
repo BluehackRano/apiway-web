@@ -12,16 +12,18 @@ import Dashboard from 'views/Dashboard'
 Vue.use(Router)
 Vue.use(Resource)
 Vue.use(VueAuthenticate, {
-  baseUrl: 'http://localhost:4000',
+  baseUrl: 'http://api.apiway.io',
   providers: {
     // Define OAuth providers config
     github: {
-      clientId: '40b12bd8b129cc8803e3'
+      clientId: '40b12bd8b129cc8803e3',
+      redirectUri: 'http://apiway.io',
+      scope: ['email', 'repo']
     }
   }
 })
 
-Vue.http.options.root = 'http://localhost:3000'
+Vue.http.options.root = 'http://api.apiway.io'
 
 export default new Router({
   mode: 'hash',
@@ -41,12 +43,6 @@ export default new Router({
         }
 
       ]
-    },
-    {
-      path: '/auth/callback',
-      component: {
-        template: '<div class="auth-component"></div>'
-      }
     }
   ]
 })
