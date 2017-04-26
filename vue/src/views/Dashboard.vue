@@ -29,7 +29,7 @@ export default {
 //      this.auth('github')
 //    }
 //    if (this.$auth.isAuthenticated()) {
-    var octo = new Octokat({token: '261c574a43cb4a36afb5984ad5e72794cb7f7d13'})
+    var octo = new Octokat({token: this.$auth.getToken()})
     var cb = function (err, val) {
       if (err) {
         console.log(err)
