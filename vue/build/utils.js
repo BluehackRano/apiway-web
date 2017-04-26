@@ -9,6 +9,10 @@ exports.assetsPath = function (_path) {
   return path.posix.join(assetsSubDirectory, _path)
 }
 
+exports.test = function() {
+  console.log("test in utils")
+}
+
 exports.cssLoaders = function (options) {
   options = options || {}
 

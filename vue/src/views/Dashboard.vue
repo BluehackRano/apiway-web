@@ -16,16 +16,31 @@
 </template>
 
 <script>
+
+import Octokat from 'octokat'
+
 export default {
   name: 'dashboard',
   created: function () {
     console.log(this.$route.query)
-    console.log()
-    if (this.$auth.isAuthenticated()) {
-      this.getUser('github')
-    } else {
-      this.auth('github')
+//    if (this.$auth.isAuthenticated()) {
+//      this.getUser('github')
+//    } else {
+//      this.auth('github')
+//    }
+//    if (this.$auth.isAuthenticated()) {
+    var octo = new Octokat({token: '261c574a43cb4a36afb5984ad5e72794cb7f7d13'})
+    var cb = function (err, val) {
+      if (err) {
+        console.log(err)
+      }
+      console.log(val)
     }
+    octo.repos('ApiWay', 'tower-web-console').fetch(cb)
+//    }
+  },
+  ready () {
+    console.log('bok: ready')
   },
   methods: {
     authLogin: function () {

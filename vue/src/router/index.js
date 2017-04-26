@@ -18,7 +18,7 @@ Vue.use(VueAuthenticate, {
     github: {
       clientId: '40b12bd8b129cc8803e3',
       redirectUri: 'http://apiway.io',
-      scope: ['email', 'repo']
+      scope: ['user', 'repo']
     }
   }
 })
