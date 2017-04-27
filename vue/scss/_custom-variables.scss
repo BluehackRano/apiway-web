@@ -40,7 +40,7 @@ $vimeo: #aad450;
 $navbar-height:                     50px;
 $navbar-bg:                         $brand-primary;
 $navbar-border:                     0;
-$navbar-brand-width:                220px;
+$navbar-brand-width:                120px;
 $navbar-brand-bg:                   darken($brand-primary,10%);
 $navbar-brand-logo:                 url('../img/logo.png');
 $navbar-brand-logo-size:            90px auto;
@@ -53,8 +53,8 @@ $navbar-disabled-color:             lighter($navbar-color, 20%);
 
 // Sidebar
 
-$sidebar-width:                     220px;
-$mobile-sidebar-width:              220px;
+$sidebar-width:                     120px;
+$mobile-sidebar-width:              120px;
 $sidebar-padding:                   0;
 $sidebar-compact-width:             50px;
 $sidebar-compact-height:            $sidebar-compact-width;

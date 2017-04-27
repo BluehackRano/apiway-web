@@ -1,11 +1,11 @@
+@charset "UTF-8";
 /**
- * ApiWay - Cloud based API Test Runner
- * @version v0.0.1
- * @link https://apiway.io
- * Copyright (c) 2017 BlueHack Inc.
+ * GenesisUI - Bootstrap 4 Admin Template
+ * @version v1.8.1
+ * @link https://genesisui.com
+ * Copyright (c) 2017 creativeLabs Łukasz Holeczek
  * @license Commercial
  */
-@charset "UTF-8";
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
@@ -2923,7 +2923,7 @@ header.navbar {
   background-color: #36a9e1; }
   header.navbar .navbar-brand {
     display: inline-block;
-    width: 220px;
+    width: 120px;
     height: 50px;
     padding: 0.5rem 1rem;
     margin-right: 0;
@@ -11199,7 +11199,7 @@ app-root {
   .app-body .main {
     flex: 1; }
   .app-body .sidebar {
-    flex: 0 0 220px;
+    flex: 0 0 120px;
     order: -1; }
   .app-body .aside-menu {
     flex: 0 0 250px; }
@@ -11213,7 +11213,7 @@ app-root {
   margin-top: 50px; }
 
 .sidebar-hidden .sidebar {
-  margin-left: -220px; }
+  margin-left: -120px; }
 
 .sidebar-fixed .sidebar {
   position: fixed;
@@ -11222,7 +11222,7 @@ app-root {
     height: calc(100vh - 50px); }
 
 .sidebar-fixed .main, .sidebar-fixed .app-footer {
-  margin-left: 220px; }
+  margin-left: 120px; }
 
 .sidebar-fixed.sidebar-hidden .main, .sidebar-fixed.sidebar-hidden .app-footer {
   margin-left: 0; }
@@ -11312,24 +11312,24 @@ app-root {
     margin-top: 50px; }
   .sidebar {
     position: fixed;
-    width: 220px;
+    width: 120px;
     height: 100%;
-    margin-left: -220px; }
+    margin-left: -120px; }
     .sidebar .sidebar-nav,
     .sidebar .nav {
-      width: 220px !important; }
+      width: 120px !important; }
   .main, .app-footer {
     margin-left: 0 !important; }
   .aside-menu {
     margin-right: -250px; }
   .sidebar-mobile-show .sidebar {
-    width: 220px;
+    width: 120px;
     margin-left: 0; }
     .sidebar-mobile-show .sidebar .sidebar-nav {
       height: calc(100vh - 50px); }
   .sidebar-mobile-show .main {
-    margin-right: -220px !important;
-    margin-left: 220px !important; } }
+    margin-right: -120px !important;
+    margin-left: 120px !important; } }
 
 .sidebar {
   padding: 0;
@@ -11354,7 +11354,7 @@ app-root {
     overflow-x: hidden;
     overflow-y: auto;
     -ms-overflow-style: -ms-autohiding-scrollbar;
-    width: 220px; }
+    width: 120px; }
     .sidebar .sidebar-nav::-webkit-scrollbar {
       position: absolute;
       width: 10px;
@@ -11372,7 +11372,7 @@ app-root {
       border-style: solid;
       border-width: 1px 2px; }
   .sidebar .nav {
-    width: 220px;
+    width: 120px;
     flex-direction: column !important; }
     .sidebar .nav .nav-title {
       padding: 0.95rem 1rem;
@@ -11512,7 +11512,7 @@ app-root {
           right: 15px;
           display: none; }
         body.sidebar-compact .sidebar ul.nav li.nav-item a.nav-link:hover, body.sidebar-compact .sidebar ul.nav li.nav-item .navbar a.dropdown-toggle:hover, .navbar body.sidebar-compact .sidebar ul.nav li.nav-item a.dropdown-toggle:hover {
-          width: 220px; }
+          width: 120px; }
           body.sidebar-compact .sidebar ul.nav li.nav-item a.nav-link:hover .badge, body.sidebar-compact .sidebar ul.nav li.nav-item .navbar a.dropdown-toggle:hover .badge, .navbar body.sidebar-compact .sidebar ul.nav li.nav-item a.dropdown-toggle:hover .badge {
             display: inline; }
       body.sidebar-compact .sidebar ul.nav li.nav-item ul {
@@ -11523,7 +11523,7 @@ app-root {
           position: relative;
           padding: 0; }
           body.sidebar-compact .sidebar ul.nav li.nav-item ul li a.nav-link, body.sidebar-compact .sidebar ul.nav li.nav-item ul li .navbar a.dropdown-toggle, .navbar body.sidebar-compact .sidebar ul.nav li.nav-item ul li a.dropdown-toggle {
-            width: 170px; }
+            width: 70px; }
           body.sidebar-compact .sidebar ul.nav li.nav-item ul li ul, body.sidebar-compact .sidebar ul.nav li.nav-item ul li ol {
             position: absolute;
             top: 0;
@@ -11535,20 +11535,20 @@ app-root {
         body.sidebar-compact .sidebar ul.nav li.nav-item.nav-dropdown.open > ul, body.sidebar-compact .sidebar ul.nav li.nav-item.nav-dropdown.open > ol {
           display: none; }
       body.sidebar-compact .sidebar ul.nav li.nav-item:hover {
-        width: 270px;
+        width: 170px;
         overflow: visible;
         background: #22262e;
         transition: 0s; }
         body.sidebar-compact .sidebar ul.nav li.nav-item:hover > a.nav-link, body.sidebar-compact .sidebar ul.nav .navbar li.nav-item:hover > a.dropdown-toggle, .navbar body.sidebar-compact .sidebar ul.nav li.nav-item:hover > a.dropdown-toggle {
-          width: 270px; }
+          width: 170px; }
         body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ul, body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ol {
           display: inline;
           max-height: 10000px;
           transition: 0s; }
           body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ul li, body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ol li {
-            width: 220px; }
+            width: 120px; }
             body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ul li a.nav-link, body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ul li .navbar a.dropdown-toggle, .navbar body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ul li a.dropdown-toggle, body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ol li a.nav-link, body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ol li .navbar a.dropdown-toggle, .navbar body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ol li a.dropdown-toggle {
-              width: 220px; }
+              width: 120px; }
         body.sidebar-compact .sidebar ul.nav li.nav-item:hover.nav-dropdown.open > ul, body.sidebar-compact .sidebar ul.nav li.nav-item:hover.nav-dropdown.open > ol {
           display: inline; } }
 
