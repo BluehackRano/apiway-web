@@ -32,7 +32,8 @@ export default new Router({
   scrollBehavior: () => ({ y: 0 }),
   routes: [
     {
-      path: '/dashboard',
+      path: '/',
+      redirect: '/dashboard',
       name: 'Home',
       component: Full,
       children: [
@@ -45,7 +46,7 @@ export default new Router({
       ]
     },
     {
-      path: '/',
+      path: '/login',
       name: 'Login',
       component: Login
     }
