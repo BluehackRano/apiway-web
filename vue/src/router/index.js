@@ -7,6 +7,7 @@ import VueAuthenticate from 'vue-authenticate'
 import Full from 'containers/Full'
 
 // Views
+import Login from 'views/Login'
 import Dashboard from 'views/Dashboard'
 
 Vue.use(Router)
@@ -31,8 +32,7 @@ export default new Router({
   scrollBehavior: () => ({ y: 0 }),
   routes: [
     {
-      path: '/',
-      redirect: '/dashboard',
+      path: '/dashboard',
       name: 'Home',
       component: Full,
       children: [
@@ -43,6 +43,11 @@ export default new Router({
         }
 
       ]
+    },
+    {
+      path: '/',
+      name: 'Login',
+      component: Login
     }
   ]
 })
