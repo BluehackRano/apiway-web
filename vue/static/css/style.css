@@ -2923,12 +2923,12 @@ header.navbar {
   background-color: #36a9e1; }
   header.navbar .navbar-brand {
     display: inline-block;
-    width: 60px;
+    width: 100px;
     height: 50px;
     padding: 0.5rem 1rem;
     margin-right: 0;
     background-color: #1e8fc6;
-    background-image: url("../img/logo.png");
+    background-image: url("../img/logo-w.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 90px auto; }
@@ -11199,7 +11199,7 @@ app-root {
   .app-body .main {
     flex: 1; }
   .app-body .sidebar {
-    flex: 0 0 60px;
+    flex: 0 0 100px;
     order: -1; }
   .app-body .aside-menu {
     flex: 0 0 250px; }
@@ -11213,7 +11213,7 @@ app-root {
   margin-top: 50px; }
 
 .sidebar-hidden .sidebar {
-  margin-left: -60px; }
+  margin-left: -100px; }
 
 .sidebar-fixed .sidebar {
   position: fixed;
@@ -11222,7 +11222,7 @@ app-root {
     height: calc(100vh - 50px); }
 
 .sidebar-fixed .main, .sidebar-fixed .app-footer {
-  margin-left: 60px; }
+  margin-left: 100px; }
 
 .sidebar-fixed.sidebar-hidden .main, .sidebar-fixed.sidebar-hidden .app-footer {
   margin-left: 0; }
@@ -11312,24 +11312,24 @@ app-root {
     margin-top: 50px; }
   .sidebar {
     position: fixed;
-    width: 60px;
+    width: 100px;
     height: 100%;
-    margin-left: -60px; }
+    margin-left: -100px; }
     .sidebar .sidebar-nav,
     .sidebar .nav {
-      width: 60px !important; }
+      width: 100px !important; }
   .main, .app-footer {
     margin-left: 0 !important; }
   .aside-menu {
     margin-right: -250px; }
   .sidebar-mobile-show .sidebar {
-    width: 60px;
+    width: 100px;
     margin-left: 0; }
     .sidebar-mobile-show .sidebar .sidebar-nav {
       height: calc(100vh - 50px); }
   .sidebar-mobile-show .main {
-    margin-right: -60px !important;
-    margin-left: 60px !important; } }
+    margin-right: -100px !important;
+    margin-left: 100px !important; } }
 
 .sidebar {
   padding: 0;
@@ -11354,7 +11354,7 @@ app-root {
     overflow-x: hidden;
     overflow-y: auto;
     -ms-overflow-style: -ms-autohiding-scrollbar;
-    width: 60px; }
+    width: 100px; }
     .sidebar .sidebar-nav::-webkit-scrollbar {
       position: absolute;
       width: 10px;
@@ -11372,7 +11372,7 @@ app-root {
       border-style: solid;
       border-width: 1px 2px; }
   .sidebar .nav {
-    width: 60px;
+    width: 100px;
     flex-direction: column !important; }
     .sidebar .nav .nav-title {
       padding: 0.95rem 1rem;
@@ -11410,7 +11410,7 @@ app-root {
           color: #fff;
           background: #22262e; }
           .sidebar .nav .nav-item .nav-link.active i, .sidebar .nav .nav-item .navbar .active.dropdown-toggle i, .navbar .sidebar .nav .nav-item .active.dropdown-toggle i {
-            color: #36a9e1; }
+            color: #fff; }
         .sidebar .nav .nav-item .nav-link [class^="icon-"], .sidebar .nav .nav-item .navbar .dropdown-toggle [class^="icon-"], .navbar .sidebar .nav .nav-item .dropdown-toggle [class^="icon-"], .sidebar .nav .nav-item .nav-link [class*=" icon-"], .sidebar .nav .nav-item .navbar .dropdown-toggle [class*=" icon-"], .navbar .sidebar .nav .nav-item .dropdown-toggle [class*=" icon-"] {
           display: inline-block;
           margin-top: -4px;
@@ -11418,7 +11418,7 @@ app-root {
         .sidebar .nav .nav-item .nav-link i, .sidebar .nav .nav-item .navbar .dropdown-toggle i, .navbar .sidebar .nav .nav-item .dropdown-toggle i {
           width: 20px;
           margin: 0 0.5rem 0 0;
-          font-size: 14px;
+          font-size: 13px;
           color: #9da0a8;
           text-align: center; }
         .sidebar .nav .nav-item .nav-link .badge, .sidebar .nav .nav-item .navbar .dropdown-toggle .badge, .navbar .sidebar .nav .nav-item .dropdown-toggle .badge {
@@ -11512,7 +11512,7 @@ app-root {
           right: 15px;
           display: none; }
         body.sidebar-compact .sidebar ul.nav li.nav-item a.nav-link:hover, body.sidebar-compact .sidebar ul.nav li.nav-item .navbar a.dropdown-toggle:hover, .navbar body.sidebar-compact .sidebar ul.nav li.nav-item a.dropdown-toggle:hover {
-          width: 60px; }
+          width: 100px; }
           body.sidebar-compact .sidebar ul.nav li.nav-item a.nav-link:hover .badge, body.sidebar-compact .sidebar ul.nav li.nav-item .navbar a.dropdown-toggle:hover .badge, .navbar body.sidebar-compact .sidebar ul.nav li.nav-item a.dropdown-toggle:hover .badge {
             display: inline; }
       body.sidebar-compact .sidebar ul.nav li.nav-item ul {
@@ -11523,7 +11523,7 @@ app-root {
           position: relative;
           padding: 0; }
           body.sidebar-compact .sidebar ul.nav li.nav-item ul li a.nav-link, body.sidebar-compact .sidebar ul.nav li.nav-item ul li .navbar a.dropdown-toggle, .navbar body.sidebar-compact .sidebar ul.nav li.nav-item ul li a.dropdown-toggle {
-            width: 10px; }
+            width: 50px; }
           body.sidebar-compact .sidebar ul.nav li.nav-item ul li ul, body.sidebar-compact .sidebar ul.nav li.nav-item ul li ol {
             position: absolute;
             top: 0;
@@ -11531,24 +11531,24 @@ app-root {
       body.sidebar-compact .sidebar ul.nav li.nav-item.nav-dropdown.open {
         background: #22262e; }
         body.sidebar-compact .sidebar ul.nav li.nav-item.nav-dropdown.open > a.nav-link i, body.sidebar-compact .sidebar ul.nav .navbar li.nav-item.nav-dropdown.open > a.dropdown-toggle i, .navbar body.sidebar-compact .sidebar ul.nav li.nav-item.nav-dropdown.open > a.dropdown-toggle i {
-          color: #36a9e1; }
+          color: #fff; }
         body.sidebar-compact .sidebar ul.nav li.nav-item.nav-dropdown.open > ul, body.sidebar-compact .sidebar ul.nav li.nav-item.nav-dropdown.open > ol {
           display: none; }
       body.sidebar-compact .sidebar ul.nav li.nav-item:hover {
-        width: 110px;
+        width: 150px;
         overflow: visible;
         background: #22262e;
         transition: 0s; }
         body.sidebar-compact .sidebar ul.nav li.nav-item:hover > a.nav-link, body.sidebar-compact .sidebar ul.nav .navbar li.nav-item:hover > a.dropdown-toggle, .navbar body.sidebar-compact .sidebar ul.nav li.nav-item:hover > a.dropdown-toggle {
-          width: 110px; }
+          width: 150px; }
         body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ul, body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ol {
           display: inline;
           max-height: 10000px;
           transition: 0s; }
           body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ul li, body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ol li {
-            width: 60px; }
+            width: 100px; }
             body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ul li a.nav-link, body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ul li .navbar a.dropdown-toggle, .navbar body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ul li a.dropdown-toggle, body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ol li a.nav-link, body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ol li .navbar a.dropdown-toggle, .navbar body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ol li a.dropdown-toggle {
-              width: 60px; }
+              width: 100px; }
         body.sidebar-compact .sidebar ul.nav li.nav-item:hover.nav-dropdown.open > ul, body.sidebar-compact .sidebar ul.nav li.nav-item:hover.nav-dropdown.open > ol {
           display: inline; } }
 
