@@ -2,8 +2,10 @@
   <div class="sidebar">
     <nav class="sidebar-nav">
       <ul class="nav">
-        <li class="nav-item mt-1 mb-1">
+        <li class="nav-item">
           <router-link :to="'/dashboard'" class="nav-link"><i class="fa fa-tachometer"></i><span>Monitoring</span></router-link>
+          <router-link :to="'/dashboard'" class="nav-link"><i class="fa fa-briefcase"></i><span>Project</span></router-link>
+          <router-link :to="'/dashboard'" class="nav-link"><i class="fa fa-file-text"></i><span>Reports</span></router-link>
         </li>
       </ul>
     </nav>
@@ -29,6 +31,8 @@ export default {
 
   .sidebar-nav .nav .nav-item i {
     width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   .sidebar-nav .nav .nav-item span {
