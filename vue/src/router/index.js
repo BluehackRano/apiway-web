@@ -7,6 +7,7 @@ import VueAuthenticate from 'vue-authenticate'
 import Full from 'containers/Full'
 
 // Views
+import Login from 'views/Login'
 import Dashboard from 'views/Dashboard'
 
 Vue.use(Router)
@@ -18,7 +19,7 @@ Vue.use(VueAuthenticate, {
     github: {
       clientId: '40b12bd8b129cc8803e3',
       redirectUri: 'http://apiway.io',
-      scope: ['email', 'repo']
+      scope: ['user', 'repo']
     }
   }
 })
@@ -43,6 +44,11 @@ export default new Router({
         }
 
       ]
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
     }
   ]
 })
