@@ -9,6 +9,7 @@ import Full from 'containers/Full'
 // Views
 import Login from 'views/Login'
 import Dashboard from 'views/Dashboard'
+import Projects from 'views/Projects'
 
 Vue.use(Router)
 Vue.use(Resource)
@@ -41,6 +42,11 @@ export default new Router({
           path: 'dashboard',
           name: 'Dashboard',
           component: Dashboard
+        },
+        {
+          path: 'projects',
+          name: 'Projects',
+          component: Projects
         }
 
       ]

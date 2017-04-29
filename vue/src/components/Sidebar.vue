@@ -4,7 +4,7 @@
       <ul class="nav">
         <li class="nav-item">
           <router-link :to="'/dashboard'" class="nav-link"><i class="fa fa-tachometer"></i><span>Monitoring</span></router-link>
-          <router-link :to="'/dashboard'" class="nav-link"><i class="fa fa-briefcase"></i><span>Project</span></router-link>
+          <router-link :to="'/projects'" class="nav-link"><i class="fa fa-briefcase"></i><span>Projects</span></router-link>
           <router-link :to="'/dashboard'" class="nav-link"><i class="fa fa-file-text"></i><span>Reports</span></router-link>
         </li>
       </ul>
@@ -27,7 +27,7 @@ export default {
 <style lang="css" scoped>
   .nav-link {
     cursor:pointer;
-  }
+    text-align: center;}
 
   .sidebar-nav .nav .nav-item i {
     width: 100%;
