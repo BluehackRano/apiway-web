@@ -5,19 +5,15 @@
           <div class="card-block">
             <img>
             <h4 class="card-title">Github</h4>
-            <p class="card-text">...</p>
+            <p class="card-text"></p>
           </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
+          <ul class="list-group list-group-flush" >
+            <li class="list-group-item" v-for="record in organizations">
               <div class="media">
-                <img class="d-flex align-self-center mr-3" src="/static/img/avatars/2.jpg" alt="Generic placeholder image">
-                <div class="media-body">
-                  <h5 class="mt-0">bluehackmaster</h5>
-                </div>
+                <img class="d-flex align-self-center mr-3 avatar" :src="record.avatar_url">
+                  <h6 class="mt-0">{{record.login}}</h6>
               </div>
             </li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Vestibulum at eros</li>
           </ul>
         </div>
       </div>
@@ -39,48 +35,57 @@
 
 <script>
 
-import Octokat from 'octokat'
+import GitHub from 'github-api'
 
 export default {
   name: 'Projects',
+  data () {
+    return {
+      organizations: ['xx']
+    }
+  },
+
   beforeCreate: function () {
     console.log('beforeCreate')
     if (!this.$auth.isAuthenticated()) {
       console.log('go home')
-//      this.$router.push({ path: '/login' })
+      this.$router.push({ path: '/login' })
     }
   },
   created: function () {
     console.log(this.$route.query)
-    console.log('dashboard')
-//    if (this.$auth.isAuthenticated()) {
-//      this.getUser('github')
-//    } else {
-//      this.auth('github')
-//    }
-//    if (this.$auth.isAuthenticated()) {
-    var octo = new Octokat({token: this.$auth.getToken()})
-    var cb = function (err, val) {
-      if (err) {
-        console.log(err)
-      }
-      console.log(val)
-    }
-    octo.repos('ApiWay', 'tower-web-console').fetch(cb)
-//    }
+    var github = new GitHub({token: this.$auth.getToken()})
+//    var github = new GitHub({token: '65f395e6cde5a647d92aba9db59ca152c499605b'})
+    this.getOrgs(github)
   },
   ready () {
     console.log('bok: ready')
   },
+
+  mounted: function () {
+    console.log('mounted')
+  },
+
   methods: {
+    getOrgs: function (github) {
+      var this_ = this
+      github.getUser().listOrgs().then(function (orgs) {
+        console.log(orgs)
+        if (orgs != null && orgs.data.length > 0) {
+          console.log(orgs.data)
+          this_.organizations = orgs.data
+        }
+      }).catch(function (err) {
+        console.error(err)
+      })
+    }
   }
 }
 </script>
 
 <style scoped>
-  .media-body {
-    margin-top: auto;
-    margin-bottom: auto;
+  .avatar {
+    border-radius: 50px;
   }
   .card {
     border-radius: 3px;

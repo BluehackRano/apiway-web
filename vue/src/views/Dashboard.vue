@@ -17,8 +17,6 @@
 
 <script>
 
-import Octokat from 'octokat'
-
 export default {
   name: 'dashboard',
   beforeCreate: function () {
@@ -29,23 +27,6 @@ export default {
     }
   },
   created: function () {
-    console.log(this.$route.query)
-    console.log('dashboard')
-//    if (this.$auth.isAuthenticated()) {
-//      this.getUser('github')
-//    } else {
-//      this.auth('github')
-//    }
-//    if (this.$auth.isAuthenticated()) {
-    var octo = new Octokat({token: this.$auth.getToken()})
-    var cb = function (err, val) {
-      if (err) {
-        console.log(err)
-      }
-      console.log(val)
-    }
-    octo.repos('ApiWay', 'tower-web-console').fetch(cb)
-//    }
   },
   ready () {
     console.log('bok: ready')
