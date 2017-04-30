@@ -41,7 +41,7 @@ export default {
   name: 'Projects',
   data () {
     return {
-      organizations: ['xx']
+      organizations: null
     }
   },
 

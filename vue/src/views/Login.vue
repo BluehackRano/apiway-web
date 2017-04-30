@@ -16,18 +16,23 @@
 </template>
 
 <script>
+
+import GitHub from 'github-api'
+
 export default {
   name: 'Login',
   beforeCreate: function () {
     console.log('beforeCreate')
     if (this.$auth.isAuthenticated()) {
       console.log('go dashboard')
+//      this.getProfile('github')
       this.$router.push({ path: 'dashboard' })
     } else {
       console.log('not authorized')
     }
   },
   created: function () {
+    console.log('created')
   },
   methods: {
     authLogin: function () {
@@ -73,6 +78,21 @@ export default {
       })
     },
 
+    getProfile: function (provider) {
+      if (provider === 'github') {
+        var github = new GitHub({token: this.$auth.getToken()})
+        var this_ = this
+        github.getUser().getProfile().then(function (profile) {
+          console.log(profile)
+          if (profile != null) {
+            //ToDo:
+          }
+        }).catch(function (err) {
+          console.error(err)
+        })
+      }
+    },
+
     getUser: function (provider) {
       var this_ = this
       if (provider === 'github') {
@@ -80,6 +100,7 @@ export default {
           params: { access_token: this_.$auth.getToken() }
         }).then(function (response) {
           this_.response = response
+          this_.$user.setUserName
           console.log(response)
         })
       } else if (provider === 'facebook') {
