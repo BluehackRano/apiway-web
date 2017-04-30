@@ -8,7 +8,7 @@
             <p class="card-text"></p>
           </div>
           <ul class="list-group list-group-flush" >
-            <li class="list-group-item" v-for="record in organizations">
+            <li class="list-group-item" v-for="record in orgs">
               <div class="media">
                 <img class="d-flex align-self-center mr-3 avatar" :src="record.avatar_url">
                   <h6 class="mt-0">{{record.login}}</h6>
@@ -35,13 +35,22 @@
 
 <script>
 
-import GitHub from 'github-api'
+// import { setTitle } from '../util/title'
+// import GitHub from 'github-api'
 
 export default {
   name: 'Projects',
-  data () {
-    return {
-      organizations: null
+  data: () => ({
+    loading: true,
+    organizations: null
+  }),
+
+  computed: {
+    orgs () {
+      return this.$store.state.orgs
+    },
+    token () {
+      return this.$auth.getToken()
     }
   },
 
@@ -53,32 +62,61 @@ export default {
     }
   },
   created: function () {
-    console.log(this.$route.query)
-    var github = new GitHub({token: this.$auth.getToken()})
+//    console.log(this.$route.query)
+//    var github = new GitHub({token: this.$auth.getToken()})
 //    var github = new GitHub({token: '65f395e6cde5a647d92aba9db59ca152c499605b'})
-    this.getOrgs(github)
+//    this.getOrgs(github)
   },
-  ready () {
-    console.log('bok: ready')
+
+  asyncData ({ store }) {
+    return store.dispatch('FETCH_ORGS', { token: this.token })
+  },
+
+  title () {
+    return this.name
+  },
+
+  beforeMount () {
+    this.fetchOrgs()
   },
 
   mounted: function () {
     console.log('mounted')
   },
 
+  watch: {
+    orgs: 'fetchOrgs'
+  },
+
   methods: {
-    getOrgs: function (github) {
-      var this_ = this
-      github.getUser().listOrgs().then(function (orgs) {
-        console.log(orgs)
-        if (orgs != null && orgs.data.length > 0) {
-          console.log(orgs.data)
-          this_.organizations = orgs.data
-        }
-      }).catch(function (err) {
-        console.error(err)
+    fetchOrgs () {
+      this.loading = true
+      fetchOrgs(this.$store, this.token).then(() => {
+        this.loading = false
       })
     }
+//    getOrgs: function (github) {
+//      var this_ = this
+//      github.getUser().listOrgs().then(function (orgs) {
+//        console.log(orgs)
+//        if (orgs != null && orgs.data.length > 0) {
+//          console.log(orgs.data)
+//          this_.organizations = orgs.data
+//        }
+//      }).catch(function (err) {
+//        console.error(err)
+//      })
+//    }
+  }
+}
+
+function fetchOrgs (store, token) {
+  if (token) {
+    return store.dispatch('FETCH_ORGS', {
+      token: token
+    }).then(() => {
+      console.log('done FETCH_ORGS in Projects.vue')
+    })
   }
 }
 </script>

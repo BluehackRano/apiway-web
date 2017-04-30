@@ -1,5 +1,6 @@
 // this is aliased in webpack config based on server/client build
 import { createAPI } from 'create-api'
+import GitHub from 'github-api'
 
 const logRequests = !!process.env.DEBUG_API
 
@@ -53,6 +54,22 @@ export function fetchItem (id) {
 
 export function fetchItems (ids) {
   return Promise.all(ids.map(id => fetchItem(id)))
+}
+
+export function fetchOrgs (token) {
+  return new Promise ((resolve, reject) => {
+    var github = new GitHub({token: token})
+    github.getUser().listOrgs().then(orgs => {
+      console.log(orgs)
+      if (orgs != null && orgs.data.length > 0) {
+        console.log(orgs.data)
+        resolve(orgs.data)
+      }
+    }).catch(err => {
+      console.error(err)
+      reject(err)
+    })
+  })
 }
 
 export function fetchUser (id) {

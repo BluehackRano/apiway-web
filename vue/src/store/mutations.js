@@ -17,6 +17,15 @@ export default {
     })
   },
 
+  SET_ORGS: (state, { orgs }) => {
+    orgs.forEach(org => {
+      if (org) {
+        console.log('SET_ORGS:' + org.id)
+        Vue.set(state.orgs, org.id, org)
+      }
+    })
+  },
+
   SET_USER: (state, { id, user }) => {
     Vue.set(state.users, id, user || false) /* false means user not found */
   }

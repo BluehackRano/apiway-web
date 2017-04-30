@@ -1,7 +1,8 @@
 import {
   fetchUser,
   fetchItems,
-  fetchIdsByType
+  fetchIdsByType,
+  fetchOrgs
 } from '../api'
 
 export default {
@@ -39,6 +40,14 @@ export default {
     } else {
       return Promise.resolve()
     }
+  },
+
+  FETCH_ORGS: ({ commit, dispatch, state }, { token }) => {
+    return fetchOrgs(token)
+        .then(orgs => {
+          console.log('FETCH_ORGS then in actions.js : orgs = ' + orgs)
+          commit('SET_ORGS', { orgs })
+        })
   },
 
   FETCH_USER: ({ commit, state }, { id }) => {
