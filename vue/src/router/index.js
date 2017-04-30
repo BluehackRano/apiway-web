@@ -26,39 +26,87 @@ Vue.use(VueAuthenticate, {
 })
 
 Vue.http.options.root = 'http://api.apiway.io'
+//
+// export default new Router({
+//   mode: 'hash',
+//   linkActiveClass: 'open active',
+//   scrollBehavior: () => ({ y: 0 }),
+//   routes: [
+//     {
+//       path: '/',
+//       redirect: '/dashboard',
+//       name: 'Home',
+//       component: Full,
+//       children: [
+//         {
+//           path: 'dashboard',
+//           name: 'Dashboard',
+//           component: Dashboard
+//         },
+//         {
+//           path: 'projects',
+//           name: 'Projects',
+//           component: Projects
+//         }
+//
+//       ]
+//     },
+//     {
+//       path: '/login',
+//       name: 'Login',
+//       component: Login
+//     },
+//     {
+//       path: '*',
+//       redirect: '/'
+//     }
+//   ]
+// })
 
-export default new Router({
-  mode: 'hash',
-  linkActiveClass: 'open active',
-  scrollBehavior: () => ({ y: 0 }),
-  routes: [
-    {
-      path: '/',
-      redirect: '/dashboard',
-      name: 'Home',
-      component: Full,
-      children: [
-        {
-          path: 'dashboard',
-          name: 'Dashboard',
-          component: Dashboard
-        },
-        {
-          path: 'projects',
-          name: 'Projects',
-          component: Projects
-        }
+export function createRouter () {
+  return new Router({
+    mode: 'history',
+    scrollBehavior: () => ({ y: 0 }),
+    // routes: [
+    // // { path: '/top/:page(\\d+)?', component: createListView('top') },
+    // // { path: '/new/:page(\\d+)?', component: createListView('new') },
+    // // { path: '/show/:page(\\d+)?', component: createListView('show') },
+    // // { path: '/ask/:page(\\d+)?', component: createListView('ask') },
+    // // { path: '/job/:page(\\d+)?', component: createListView('job') },
+    // {path: '/dashboard', component: Dashboard},
+    // {path: '/projects', component: Projects},
+    // {path: '/login', component: Login},
+    // {path: '/', redirect: '/dashboard', component: Full}
+    // ]
+    routes: [
+      {
+        path: '/',
+        redirect: '/dashboard',
+        name: 'Home',
+        component: Full,
+        children: [
+          {
+            path: 'dashboard',
+            name: 'Dashboard',
+            component: Dashboard
+          },
+          {
+            path: 'projects',
+            name: 'Projects',
+            component: Projects
+          }
 
-      ]
-    },
-    {
-      path: '/login',
-      name: 'Login',
-      component: Login
-    },
-    {
-      path: '*',
-      redirect: '/'
-    }
-  ]
-})
+        ]
+      },
+      {
+        path: '/login',
+        name: 'Login',
+        component: Login
+      },
+      {
+        path: '*',
+        redirect: '/'
+      }
+    ]
+  })
+}

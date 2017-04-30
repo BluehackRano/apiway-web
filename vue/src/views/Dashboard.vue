@@ -23,7 +23,8 @@ export default {
     console.log('beforeCreate')
     if (!this.$auth.isAuthenticated()) {
       console.log('go home')
-      this.$router.push({ path: '/login' })
+//      this.$router.push({ path: '/login' })
+      this.$router.replace('/login')
     }
   },
   created: function () {

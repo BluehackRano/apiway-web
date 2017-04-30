@@ -81,11 +81,10 @@ export default {
     getProfile: function (provider) {
       if (provider === 'github') {
         var github = new GitHub({token: this.$auth.getToken()})
-        var this_ = this
+//        var this_ = this
         github.getUser().getProfile().then(function (profile) {
           console.log(profile)
           if (profile != null) {
-            //ToDo:
           }
         }).catch(function (err) {
           console.error(err)
@@ -132,7 +131,8 @@ export default {
       this.$auth.authenticate(provider).then(function (authResponse) {
         console.log(authResponse)
         console.log(this_.$auth.isAuthenticated())
-        this_.$router.push({ path: 'dashboard' })
+//        this_.$router.push({ path: 'dashboard' })
+        this_.$router.replace('/dashboard')
       }).catch(function (err) {
         this_.response = err
       })
