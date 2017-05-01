@@ -8,7 +8,7 @@
             <p class="card-text"></p>
           </div>
           <ul class="list-group list-group-flush" >
-            <li class="list-group-item" v-for="record in orgs">
+            <li class="list-group-item" v-for="record in organizations">
               <div class="media">
                 <img class="d-flex align-self-center mr-3 avatar" :src="record.avatar_url">
                   <h6 class="mt-0">{{record.login}}</h6>
@@ -41,12 +41,11 @@
 export default {
   name: 'Projects',
   data: () => ({
-    loading: true,
-    organizations: null
+    loading: true
   }),
 
   computed: {
-    orgs () {
+    organizations () {
       return this.$store.state.orgs
     },
     token () {
@@ -57,15 +56,11 @@ export default {
   beforeCreate: function () {
     console.log('beforeCreate')
     if (!this.$auth.isAuthenticated()) {
-      console.log('go home')
+      console.log('go to Login')
       this.$router.replace('/login')
     }
   },
   created: function () {
-//    console.log(this.$route.query)
-//    var github = new GitHub({token: this.$auth.getToken()})
-//    var github = new GitHub({token: '65f395e6cde5a647d92aba9db59ca152c499605b'})
-//    this.getOrgs(github)
   },
 
   asyncData ({ store }) {
@@ -73,7 +68,7 @@ export default {
   },
 
   title () {
-    return this.name
+    return 'Projects'
   },
 
   beforeMount () {
@@ -85,7 +80,7 @@ export default {
   },
 
   watch: {
-    orgs: 'fetchOrgs'
+    organizations: 'fetchOrgs'
   },
 
   methods: {
@@ -95,18 +90,6 @@ export default {
         this.loading = false
       })
     }
-//    getOrgs: function (github) {
-//      var this_ = this
-//      github.getUser().listOrgs().then(function (orgs) {
-//        console.log(orgs)
-//        if (orgs != null && orgs.data.length > 0) {
-//          console.log(orgs.data)
-//          this_.organizations = orgs.data
-//        }
-//      }).catch(function (err) {
-//        console.error(err)
-//      })
-//    }
   }
 }
 
