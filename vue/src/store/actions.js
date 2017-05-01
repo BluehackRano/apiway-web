@@ -3,7 +3,9 @@ import {
   fetchItems,
   fetchIdsByType,
   fetchOrgs,
-  fetchProfile
+  fetchProfile,
+  fetchRepos,
+  fetchOrgRepos
 } from '../api'
 
 export default {
@@ -56,6 +58,22 @@ export default {
       .then(profile => {
         console.log('FETCH_USER_PROFILE then in actions.js : profile = ' + profile)
         commit('SET_PROFILE', { profile })
+      })
+  },
+
+  FETCH_REPOS: ({ commit, dispatch, state }, { token }) => {
+    return fetchRepos(token)
+      .then(repos => {
+        console.log('FETCH_REPOS then in actions.js : repos = ' + repos)
+        commit('SET_REPOS', { repos })
+      })
+  },
+
+  FETCH_ORG_REPOS: ({ commit, dispatch, state }, { org, token }) => {
+    return fetchOrgRepos(org, token)
+      .then(repos => {
+        console.log('FETCH_ORG_REPOS then in actions.js : repos = ' + repos)
+        commit('SET_REPOS', { repos })
       })
   },
 

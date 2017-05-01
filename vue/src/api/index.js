@@ -87,6 +87,36 @@ export function fetchProfile (token) {
   })
 }
 
+export function fetchRepos(token) {
+  return new Promise ((resolve, reject) => {
+    var github = new GitHub({token: token})
+    github.getUser().listRepos({type: 'owner'}).then(repos => {
+      console.log(repos)
+      if (repos != null && repos.data.length > 0) {
+        resolve(repos.data)
+      }
+    }).catch(err => {
+      console.error(err)
+      reject(err)
+    })
+  })
+}
+
+export function fetchOrgRepos(organization, token) {
+  return new Promise ((resolve, reject) => {
+    var github = new GitHub({token: token})
+    github.getOrganization(organization).getRepos().then(repos => {
+      console.log(repos)
+      if (repos != null && repos.data.length > 0) {
+        resolve(repos.data)
+      }
+    }).catch(err => {
+        console.error(err)
+      reject(err)
+    })
+  })
+}
+
 export function fetchUser (id) {
   return fetch(`user/${id}`)
 }

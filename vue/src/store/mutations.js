@@ -26,6 +26,16 @@ export default {
     })
   },
 
+  SET_REPOS: (state, { repos }) => {
+    state.repos = {}
+    repos.forEach(repo => {
+      if (repo) {
+        console.log('SET_REPOS:' + repo.id)
+        Vue.set(state.repos, repo.id, repo)
+      }
+    })
+  },
+
   SET_USER: (state, { id, user }) => {
     Vue.set(state.users, id, user || false) /* false means user not found */
   },

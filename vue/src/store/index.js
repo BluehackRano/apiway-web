@@ -14,6 +14,7 @@ export function createStore () {
       items: {/* [id: number]: Item */},
       orgs: {},
       profile: {},
+      repos: {/* [id: string]: Repo */},
       users: {/* [id: string]: User */},
       lists: {
         top: [/* number */],
