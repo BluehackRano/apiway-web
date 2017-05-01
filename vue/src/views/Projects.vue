@@ -8,10 +8,16 @@
             <p class="card-text"></p>
           </div>
           <ul class="list-group list-group-flush" >
-            <li class="list-group-item" v-for="record in organizations">
+            <li class="list-group-item" v-for="user in profile">
               <div class="media">
-                <img class="d-flex align-self-center mr-3 avatar" :src="record.avatar_url">
-                  <h6 class="mt-0">{{record.login}}</h6>
+                <img class="d-flex align-self-center mr-3 avatar" :src="user.avatar_url">
+                <h6 class="mt-0">{{user.login}}</h6>
+              </div>
+            </li>
+            <li class="list-group-item" v-for="organization in organizations">
+              <div class="media">
+                <img class="d-flex align-self-center mr-3 avatar" :src="organization.avatar_url">
+                  <h6 class="mt-0">{{organization.login}}</h6>
               </div>
             </li>
           </ul>
@@ -45,6 +51,9 @@ export default {
   }),
 
   computed: {
+    profile () {
+      return this.$store.state.profile
+    },
     organizations () {
       return this.$store.state.orgs
     },
@@ -72,6 +81,7 @@ export default {
   },
 
   beforeMount () {
+    this.fetchProfile()
     this.fetchOrgs()
   },
 
@@ -80,7 +90,8 @@ export default {
   },
 
   watch: {
-    organizations: 'fetchOrgs'
+    organizations: 'fetchOrgs',
+    profile: 'fetchProfile'
   },
 
   methods: {
@@ -89,7 +100,24 @@ export default {
       fetchOrgs(this.$store, this.token).then(() => {
         this.loading = false
       })
+    },
+    fetchProfile () {
+      this.loading = true
+      console.log(this.$store.state.profile)
+      fetchProfile(this.$store, this.token).then(() => {
+        this.loading = false
+      })
     }
+  }
+}
+
+function fetchProfile (store, token) {
+  if (token) {
+    return store.dispatch('FETCH_USER_PROFILE', {
+      token: token
+    }).then(() => {
+      console.log('done FETCH_USER_PROFILE in Projects.vue')
+    })
   }
 }
 
