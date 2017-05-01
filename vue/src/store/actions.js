@@ -81,5 +81,10 @@ export default {
     return state.users[id]
       ? Promise.resolve(state.users[id])
       : fetchUser(id).then(user => commit('SET_USER', { id, user }))
+  },
+
+  SET_ACTIVE_REPO: ({ commit, state }, { repo }) => {
+    console.log('repo = ' + repo)
+    commit('SET_ACTIVE_REPO', { repo })
   }
 }

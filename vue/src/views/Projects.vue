@@ -47,9 +47,6 @@
 
 <script>
 
-// import { setTitle } from '../util/title'
-// import GitHub from 'github-api'
-
 export default {
   name: 'Projects',
   data: () => ({
@@ -68,7 +65,7 @@ export default {
     },
     token () {
       return this.$auth.getToken()
-//      return '00c2b08825677b2dd47c35d3eff4027cefacca49'
+//      return 'f7495118124ed45d0d474ede85f9e11b196a5c08'
     }
   },
 
@@ -76,7 +73,7 @@ export default {
     console.log('beforeCreate')
     if (!this.$auth.isAuthenticated()) {
       console.log('go to Login')
-      this.$router.replace('/login')
+//      this.$router.replace('/login')
     }
   },
   created: function () {
@@ -133,7 +130,11 @@ export default {
       })
     },
     runTest (repo) {
-      this.$router.replace('/dashboard')
+      console.log('runTest')
+      console.log(repo)
+      this.$store.dispatch('SET_ACTIVE_REPO', { repo: repo })
+      this.$router.replace(`/dashboard/${repo.full_name}`)
+//      this.$router.replace('/dashboard/bluehackmaster/cubePRO3-android') // + repo.full_name)
     }
   }
 }

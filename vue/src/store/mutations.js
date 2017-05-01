@@ -40,6 +40,11 @@ export default {
     Vue.set(state.users, id, user || false) /* false means user not found */
   },
 
+  SET_ACTIVE_REPO: (state, { repo }) => {
+    state.activeRepo = repo
+  // Vue.set(state.activeRepo, 1, repo)
+  },
+
   SET_PROFILE: (state, { profile }) => {
     Vue.set(state.profile, profile.id, profile)
   }

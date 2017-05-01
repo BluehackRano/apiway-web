@@ -91,6 +91,11 @@ export function createRouter () {
             component: Dashboard
           },
           {
+            path: 'dashboard/:user/:repo',
+            name: 'Dashboard',
+            component: Dashboard
+          },
+          {
             path: 'projects',
             name: 'Projects',
             component: Projects

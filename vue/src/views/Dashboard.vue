@@ -19,14 +19,28 @@
 
 export default {
   name: 'dashboard',
+
+//  data: () => ({
+//    activeRepo: this.$store.getters.activeRepo
+//  }),
+
+  computed: {
+    token () {
+      return this.$auth.getToken()
+//      return 'f7495118124ed45d0d474ede85f9e11b196a5c08'
+    }
+  },
+
   beforeCreate: function () {
     console.log('beforeCreate')
     if (!this.$auth.isAuthenticated()) {
       console.log('go home')
-      this.$router.replace('/login')
+//      this.$router.replace('/login')
     }
   },
   created: function () {
+    console.log('created in Dashboard : ' + this.$route.params.repo)
+    console.log(this.$store.getters.activeRepo)
   },
   ready () {
     console.log('bok: ready')
