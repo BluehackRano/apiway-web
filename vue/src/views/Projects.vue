@@ -35,10 +35,9 @@
             <!--<p class="card-text">...</p>-->
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-            <li class="list-group-item" v-for="repo in repos">
+            <li class="list-group-item justify-content-between" v-for="repo in repos">
               {{ repo.full_name }}
+              <button type="button" @click="runTest(repo)" class="btn btn-info">Run</button>
             </li>
           </ul>
         </div>
@@ -69,6 +68,7 @@ export default {
     },
     token () {
       return this.$auth.getToken()
+//      return '00c2b08825677b2dd47c35d3eff4027cefacca49'
     }
   },
 
@@ -102,7 +102,6 @@ export default {
   watch: {
     organizations: 'fetchOrgs',
     profile: 'fetchProfile'
-//    repos: 'fetchRepos'
   },
 
   methods: {
@@ -132,6 +131,9 @@ export default {
       fetchOrgRepos(this.$store, org, this.token).then(() => {
         this.loading = false
       })
+    },
+    runTest (repo) {
+      this.$router.replace('/dashboard')
     }
   }
 }

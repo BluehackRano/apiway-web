@@ -9,7 +9,7 @@
 
     <!--<hr />-->
 
-    <button v-if="!this.$auth.isAuthenticated()" @click="auth('github')" class="button--github">Auth github</button>
+    <!--<button v-if="!this.$auth.isAuthenticated()" @click="auth('github')" class="button&#45;&#45;github">Auth github</button>-->
     <!--<button @click="auth('github')" class="button&#45;&#45;github">Auth github</button>-->
     <hr />
   </div>
@@ -23,7 +23,6 @@ export default {
     console.log('beforeCreate')
     if (!this.$auth.isAuthenticated()) {
       console.log('go home')
-//      this.$router.push({ path: '/login' })
       this.$router.replace('/login')
     }
   },
