@@ -13,6 +13,7 @@ export function createStore () {
       itemsPerPage: 20,
       items: {/* [id: number]: Item */},
       orgs: {},
+      profile: {},
       users: {/* [id: string]: User */},
       lists: {
         top: [/* number */],

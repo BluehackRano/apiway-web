@@ -2,7 +2,8 @@ import {
   fetchUser,
   fetchItems,
   fetchIdsByType,
-  fetchOrgs
+  fetchOrgs,
+  fetchProfile
 } from '../api'
 
 export default {
@@ -48,6 +49,14 @@ export default {
           console.log('FETCH_ORGS then in actions.js : orgs = ' + orgs)
           commit('SET_ORGS', { orgs })
         })
+  },
+
+  FETCH_USER_PROFILE: ({ commit, dispatch, state }, { token }) => {
+    return fetchProfile(token)
+      .then(profile => {
+        console.log('FETCH_USER_PROFILE then in actions.js : profile = ' + profile)
+        commit('SET_PROFILE', { profile })
+      })
   },
 
   FETCH_USER: ({ commit, state }, { id }) => {

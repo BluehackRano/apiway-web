@@ -17,8 +17,6 @@
 
 <script>
 
-import GitHub from 'github-api'
-
 export default {
   name: 'Login',
   beforeCreate: function () {
@@ -34,6 +32,13 @@ export default {
   created: function () {
     console.log('created')
   },
+
+  computed: {
+    token () {
+      return this.$auth.getToken()
+    }
+  },
+
   methods: {
     authLogin: function () {
       let user = {
@@ -78,20 +83,6 @@ export default {
       })
     },
 
-    getProfile: function (provider) {
-      if (provider === 'github') {
-        var github = new GitHub({token: this.$auth.getToken()})
-//        var this_ = this
-        github.getUser().getProfile().then(function (profile) {
-          console.log(profile)
-          if (profile != null) {
-          }
-        }).catch(function (err) {
-          console.error(err)
-        })
-      }
-    },
-
     getUser: function (provider) {
       var this_ = this
       if (provider === 'github') {
@@ -99,7 +90,6 @@ export default {
           params: { access_token: this_.$auth.getToken() }
         }).then(function (response) {
           this_.response = response
-          this_.$user.setUserName
           console.log(response)
         })
       } else if (provider === 'facebook') {
@@ -124,7 +114,7 @@ export default {
     },
 
     auth: function (provider) {
-      this.$auth.logout()
+//      this.$auth.logout()
       this.response = null
 
       var this_ = this
@@ -132,7 +122,12 @@ export default {
         console.log(authResponse)
         console.log(this_.$auth.isAuthenticated())
 //        this_.$router.push({ path: 'dashboard' })
-        this_.$router.replace('/dashboard')
+
+        this_.$store.dispatch('FETCH_USER_PROFILE', {
+          token: this_.token
+        }).then(() => {
+          this_.$router.replace('/dashboard')
+        })
       }).catch(function (err) {
         this_.response = err
       })

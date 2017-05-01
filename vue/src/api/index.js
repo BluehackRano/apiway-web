@@ -64,7 +64,22 @@ export function fetchOrgs (token) {
       if (orgs != null && orgs.data.length > 0) {
         console.log(orgs.data)
         resolve(orgs.data)
+      } else {
+        reject('null')
       }
+    }).catch(err => {
+      console.error(err)
+      reject(err)
+    })
+  })
+}
+
+export function fetchProfile (token) {
+  return new Promise ((resolve, reject) => {
+    var github = new GitHub({token: token})
+    github.getUser().getProfile().then(profile => {
+      console.log(profile.data)
+      resolve(profile.data)
     }).catch(err => {
       console.error(err)
       reject(err)
