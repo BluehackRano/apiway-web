@@ -1,6 +1,7 @@
 // this is aliased in webpack config based on server/client build
 import { createAPI } from 'create-api'
 import GitHub from 'github-api'
+import ApiWay from 'apiway.js'
 
 const logRequests = !!process.env.DEBUG_API
 
@@ -135,4 +136,20 @@ export function watchList (type, cb) {
   return () => {
     ref.off('value', handler)
   }
+}
+
+export function updateUserProfile(profile) {
+  return new Promise ((resolve, reject) => {
+    var apiway = new ApiWay({})
+    console.log('profile = ' + profile)
+    apiway.getUser().updateProfile(profile).then(data => {
+    console.log(data)
+    if (data != null) {
+      resolve(repos.data)
+    }
+    }).catch(err => {
+        console.error(err)
+      reject(err)
+    })
+  })
 }

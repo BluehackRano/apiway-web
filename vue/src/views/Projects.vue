@@ -64,8 +64,8 @@ export default {
       return this.$store.state.repos
     },
     token () {
-      return this.$auth.getToken()
-//      return 'f7495118124ed45d0d474ede85f9e11b196a5c08'
+//      return this.$auth.getToken()
+      return 'b023b821f18fb4fb4e69bb9ae92ff40608b0c0d1'
     }
   },
 
@@ -74,6 +74,8 @@ export default {
     if (!this.$auth.isAuthenticated()) {
       console.log('go to Login')
 //      this.$router.replace('/login')
+    } else {
+
     }
   },
   created: function () {
@@ -145,6 +147,10 @@ function fetchProfile (store, token) {
       token: token
     }).then(() => {
       console.log('done FETCH_USER_PROFILE in Projects.vue')
+      store.dispatch('UPDATE_USER_PROFILE', {})
+        .then(() => {
+        }
+      )
     })
   }
 }

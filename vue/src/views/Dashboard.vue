@@ -26,15 +26,15 @@ export default {
 
   computed: {
     token () {
-      return this.$auth.getToken()
-//      return 'f7495118124ed45d0d474ede85f9e11b196a5c08'
+//      return this.$auth.getToken()
+      return 'b023b821f18fb4fb4e69bb9ae92ff40608b0c0d1'
     }
   },
 
   beforeCreate: function () {
     console.log('beforeCreate')
     if (!this.$auth.isAuthenticated()) {
-      console.log('go home')
+      console.log('go home...')
 //      this.$router.replace('/login')
     }
   },

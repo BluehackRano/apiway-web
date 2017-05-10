@@ -23,7 +23,7 @@ export default {
     console.log('beforeCreate')
     if (this.$auth.isAuthenticated()) {
       console.log('go dashboard')
-//      this.getProfile('github')
+      this.getProfile('github')
       this.$router.push({ path: 'dashboard' })
     } else {
       console.log('not authorized')

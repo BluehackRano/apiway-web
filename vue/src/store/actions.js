@@ -5,7 +5,8 @@ import {
   fetchOrgs,
   fetchProfile,
   fetchRepos,
-  fetchOrgRepos
+  fetchOrgRepos,
+  updateUserProfile
 } from '../api'
 
 export default {
@@ -46,6 +47,7 @@ export default {
   },
 
   FETCH_ORGS: ({ commit, dispatch, state }, { token }) => {
+    console.log('FETCH_ORGS: token=' + token)
     return fetchOrgs(token)
         .then(orgs => {
           console.log('FETCH_ORGS then in actions.js : orgs = ' + orgs)
@@ -81,6 +83,13 @@ export default {
     return state.users[id]
       ? Promise.resolve(state.users[id])
       : fetchUser(id).then(user => commit('SET_USER', { id, user }))
+  },
+
+  UPDATE_USER_PROFILE: ({ commit, state }, { id }) => {
+    return updateUserProfile(state.profile)
+      .then((data) => {
+        console.log(data)
+      })
   },
 
   SET_ACTIVE_REPO: ({ commit, state }, { repo }) => {
