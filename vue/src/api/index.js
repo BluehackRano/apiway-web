@@ -141,11 +141,18 @@ export function watchList (type, cb) {
 export function updateUserProfile(profile) {
   return new Promise ((resolve, reject) => {
     var apiway = new ApiWay({})
+
     console.log('profile = ' + profile)
-    apiway.getUser().updateProfile(profile).then(data => {
-    console.log(data)
-    if (data != null) {
-      resolve(repos.data)
+    var data = {
+      login: profile.me.login,
+      avatarUrl: profile.me.avatar_url,
+      email: profile.me.email,
+      oauthProvider: "github"
+    }
+    apiway.getUser().updateProfile(data).then(res => {
+    console.log(res)
+    if (res!= null) {
+      resolve(res.data)
     }
     }).catch(err => {
         console.error(err)

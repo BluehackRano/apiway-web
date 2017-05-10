@@ -46,6 +46,6 @@ export default {
   },
 
   SET_PROFILE: (state, { profile }) => {
-    Vue.set(state.profile, profile.id, profile)
+    Vue.set(state.profile, 'me', profile)
   }
 }
