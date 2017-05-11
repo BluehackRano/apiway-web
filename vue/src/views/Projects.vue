@@ -8,11 +8,11 @@
             <p class="card-text"></p>
           </div>
           <ul class="list-group list-group-flush" >
-            <li class="list-group-item" v-for="user in profile">
+            <li class="list-group-item">
               <a @click="fetchRepos">
                 <div class="media">
-                  <img class="d-flex align-self-center mr-3 avatar" :src="user.avatar_url">
-                  <h6 class="mt-0">{{user.login}}</h6>
+                  <img class="d-flex align-self-center mr-3 avatar" :src="profile.me.avatar_url">
+                  <h6 class="mt-0">{{profile.me.login}}</h6>
                 </div>
               </a>
             </li>
