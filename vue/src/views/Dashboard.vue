@@ -17,25 +17,22 @@
 
 <script>
 
+var oauth = require('../util/oauth')
+
 export default {
   name: 'dashboard',
 
-//  data: () => ({
-//    activeRepo: this.$store.getters.activeRepo
-//  }),
-
   computed: {
     token () {
-//      return this.$auth.getToken()
-      return 'b023b821f18fb4fb4e69bb9ae92ff40608b0c0d1'
+      return oauth.getToken(this.$auth)
     }
   },
 
   beforeCreate: function () {
     console.log('beforeCreate')
-    if (!this.$auth.isAuthenticated()) {
+    if (!oauth.isAuthenticated(this.$auth)) {
       console.log('go home...')
-//      this.$router.replace('/login')
+      this.$router.replace('/login')
     }
   },
   created: function () {

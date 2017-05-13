@@ -20,7 +20,7 @@ export default {
   SET_ORGS: (state, { orgs }) => {
     orgs.forEach(org => {
       if (org) {
-        console.log('SET_ORGS:' + org.id)
+        // console.log('SET_ORGS:' + org.id)
         Vue.set(state.orgs, org.id, org)
       }
     })
