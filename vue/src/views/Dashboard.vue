@@ -9,7 +9,7 @@
 
     <!--<hr />-->
 
-    <button v-if="!this.$auth.isAuthenticated()" @click="auth('github')" class="button--github">Auth github</button>
+    <!--<button v-if="!this.$auth.isAuthenticated()" @click="auth('github')" class="button&#45;&#45;github">Auth github</button>-->
     <!--<button @click="auth('github')" class="button&#45;&#45;github">Auth github</button>-->
     <hr />
   </div>
@@ -17,35 +17,27 @@
 
 <script>
 
-import Octokat from 'octokat'
+var oauth = require('../util/oauth')
 
 export default {
   name: 'dashboard',
+
+  computed: {
+    token () {
+      return oauth.getToken(this.$auth)
+    }
+  },
+
   beforeCreate: function () {
     console.log('beforeCreate')
-    if (!this.$auth.isAuthenticated()) {
-      console.log('go home')
-//      this.$router.push({ path: '/login' })
+    if (!oauth.isAuthenticated(this.$auth)) {
+      console.log('go home...')
+      this.$router.replace('/login')
     }
   },
   created: function () {
-    console.log(this.$route.query)
-    console.log('dashboard')
-//    if (this.$auth.isAuthenticated()) {
-//      this.getUser('github')
-//    } else {
-//      this.auth('github')
-//    }
-//    if (this.$auth.isAuthenticated()) {
-    var octo = new Octokat({token: this.$auth.getToken()})
-    var cb = function (err, val) {
-      if (err) {
-        console.log(err)
-      }
-      console.log(val)
-    }
-    octo.repos('ApiWay', 'tower-web-console').fetch(cb)
-//    }
+    console.log('created in Dashboard : ' + this.$route.params.repo)
+    console.log(this.$store.getters.activeRepo)
   },
   ready () {
     console.log('bok: ready')

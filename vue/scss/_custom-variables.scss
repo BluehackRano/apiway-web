@@ -40,9 +40,9 @@ $vimeo: #aad450;
 $navbar-height:                     50px;
 $navbar-bg:                         $brand-primary;
 $navbar-border:                     0;
-$navbar-brand-width:                60px;
+$navbar-brand-width:                100px;
 $navbar-brand-bg:                   darken($brand-primary,10%);
-$navbar-brand-logo:                 url('../img/logo.png');
+$navbar-brand-logo:                 url('../img/logo-w.png');
 $navbar-brand-logo-size:            90px auto;
 $navbar-brand-border:               0;
 
@@ -53,8 +53,8 @@ $navbar-disabled-color:             lighter($navbar-color, 20%);
 
 // Sidebar
 
-$sidebar-width:                     60px;
-$mobile-sidebar-width:              60px;
+$sidebar-width:                     100px;
+$mobile-sidebar-width:              100px;
 $sidebar-padding:                   0;
 $sidebar-compact-width:             50px;
 $sidebar-compact-height:            $sidebar-compact-width;
@@ -84,7 +84,7 @@ $sidebar-nav-link-hover-icon-color: #fff !important;
 $sidebar-nav-link-hover-borders:    0;
 $sidebar-nav-link-active-color:     #fff;
 $sidebar-nav-link-active-bg:        darken($sidebar-bg, 10%);
-$sidebar-nav-link-active-icon-color: $brand-primary;
+$sidebar-nav-link-active-icon-color: #fff;
 
 $sidebar-nav-link-active-borders:   0;
 

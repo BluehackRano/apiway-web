@@ -16,19 +16,29 @@
 </template>
 
 <script>
+
 export default {
   name: 'Login',
   beforeCreate: function () {
     console.log('beforeCreate')
     if (this.$auth.isAuthenticated()) {
       console.log('go dashboard')
+      this.getProfile('github')
       this.$router.push({ path: 'dashboard' })
     } else {
       console.log('not authorized')
     }
   },
   created: function () {
+    console.log('created')
   },
+
+  computed: {
+    token () {
+      return this.$auth.getToken()
+    }
+  },
+
   methods: {
     authLogin: function () {
       let user = {
@@ -104,14 +114,20 @@ export default {
     },
 
     auth: function (provider) {
-      this.$auth.logout()
+//      this.$auth.logout()
       this.response = null
 
       var this_ = this
       this.$auth.authenticate(provider).then(function (authResponse) {
         console.log(authResponse)
         console.log(this_.$auth.isAuthenticated())
-        this_.$router.push({ path: 'dashboard' })
+//        this_.$router.push({ path: 'dashboard' })
+
+        this_.$store.dispatch('FETCH_USER_PROFILE', {
+          token: this_.token
+        }).then(() => {
+          this_.$router.replace('/dashboard')
+        })
       }).catch(function (err) {
         this_.response = err
       })

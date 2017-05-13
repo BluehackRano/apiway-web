@@ -20,6 +20,11 @@ var webpackConfig = merge(baseWebpackConfig, {
       extract: true
     })
   },
+  resolve: {
+    alias: {
+      'create-api': './create-api-client.js'
+    }
+  },
   devtool: config.build.productionSourceMap ? '#source-map' : false,
   output: {
     path: config.build.assetsRoot,
