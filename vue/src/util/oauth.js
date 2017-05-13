@@ -2,8 +2,10 @@ var config = require('../../config')
 
 export function getToken (auth) {
   if (location.hostname.includes('localhost')) {
+    console.log('localhost')
     return config.dev.localEnv.token.github
   } else {
+    console.log('apiway.io')
     return auth.getToken()
   }
 }

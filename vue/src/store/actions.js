@@ -67,7 +67,7 @@ export default {
   FETCH_REPOS: ({ commit, dispatch, state }, { token }) => {
     return fetchRepos(token)
       .then(repos => {
-        console.log('FETCH_REPOS then in actions.js : repos = ' + repos)
+        console.log('FETCH_REPOS then in actions.js')
         commit('SET_REPOS', { repos })
       })
   },
@@ -99,11 +99,8 @@ export default {
     return addProject(repo, state.userId)
       .then((data) => {
         console.log(data)
+        let projectId = data.data.projectId
+        commit('SET_ACTIVE_PROJECT', { projectId })
       })
-  },
-
-  SET_ACTIVE_REPO: ({ commit, state }, { repo }) => {
-    console.log('repo = ' + repo)
-    commit('SET_ACTIVE_REPO', { repo })
   }
 }

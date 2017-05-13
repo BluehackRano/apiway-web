@@ -40,8 +40,8 @@ export default {
     Vue.set(state.users, id, user || false) /* false means user not found */
   },
 
-  SET_ACTIVE_REPO: (state, { repo }) => {
-    state.activeRepo = repo
+  SET_ACTIVE_PROJECT: (state, { projectId }) => {
+    state.activeProjectId = projectId
   },
 
   ADD_PROJECT: (state, { repo }) => {
