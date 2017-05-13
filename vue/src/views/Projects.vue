@@ -132,10 +132,12 @@ export default {
       })
     },
     runTest (repo) {
-      console.log('runTest')
-      console.log(repo)
-      this.$store.dispatch('SET_ACTIVE_REPO', { repo: repo })
-      this.$router.replace(`/dashboard/${repo.full_name}`)
+      console.log('runTest: ' + repo)
+      addProject(this.$store, repo).then(() => {
+        this.loading = false
+        this.$store.dispatch('SET_ACTIVE_REPO', { repo: repo })
+        this.$router.replace(`/dashboard/${repo.full_name}`)
+      })
 //      this.$router.replace('/dashboard/bluehackmaster/cubePRO3-android') // + repo.full_name)
     }
   }
@@ -184,6 +186,14 @@ function fetchOrgRepos (store, org, token) {
       console.log('done FETCH_ORG_REPOS in Projects.vue')
     })
   }
+}
+
+function addProject (store, repo) {
+  return store.dispatch('ADD_PROJECT', {
+    repo: repo
+  }).then(() => {
+    console.log('done ADD_PROJECT in Projects.vue')
+  })
 }
 </script>
 

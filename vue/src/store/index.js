@@ -12,9 +12,11 @@ export function createStore () {
       activeType: null,
       activeRepo: {},
       itemsPerPage: 20,
+      userId: null,
       items: {/* [id: number]: Item */},
       orgs: {},
       profile: {},
+      projects: {},
       repos: {/* [id: string]: Repo */},
       users: {/* [id: string]: User */},
       lists: {

@@ -150,13 +150,39 @@ export function updateUserProfile(profile) {
       oauthProvider: "github"
     }
     apiway.getUser().updateProfile(data).then(res => {
-    console.log(res)
-    if (res!= null) {
-      resolve(res.data)
-    }
+      console.log(res)
+      if (res!= null) {
+        resolve(res.data)
+      }
     }).catch(err => {
         console.error(err)
       reject(err)
     })
   })
+}
+
+export function addProject(repo, userId) {
+  return new Promise ((resolve, reject) => {
+    var apiway = new ApiWay({})
+
+    console.log('project = ' + repo)
+    var data = {
+      name: repo.name,
+      fullName: repo.fullName,
+      owner: userId,
+      html_url: repo.html_url,
+      git_url: repo.git_url,
+      provider: "github"
+    }
+    console.log(data)
+    apiway.getProject().addProject(data).then(res => {
+      console.log(res)
+    if (res!= null) {
+      resolve(res.data)
+    }
+  }).catch(err => {
+      console.error(err)
+    reject(err)
+  })
+})
 }

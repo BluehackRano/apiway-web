@@ -6,7 +6,8 @@ import {
   fetchProfile,
   fetchRepos,
   fetchOrgRepos,
-  updateUserProfile
+  updateUserProfile,
+  addProject
 } from '../api'
 
 export default {
@@ -87,6 +88,15 @@ export default {
 
   UPDATE_USER_PROFILE: ({ commit, state }, { id }) => {
     return updateUserProfile(state.profile)
+      .then((data) => {
+        console.log('UPDATE_USER_PROFILE: ' + JSON.stringify(data))
+        let userId = data.data.userId
+        commit('SET_USER_ID', { userId })
+      })
+  },
+
+  ADD_PROJECT: ({ commit, state }, { repo }) => {
+    return addProject(repo, state.userId)
       .then((data) => {
         console.log(data)
       })

@@ -30,7 +30,7 @@ export default {
     state.repos = {}
     repos.forEach(repo => {
       if (repo) {
-        console.log('SET_REPOS:' + repo.id)
+        // console.log('SET_REPOS:' + repo.id)
         Vue.set(state.repos, repo.id, repo)
       }
     })
@@ -42,10 +42,17 @@ export default {
 
   SET_ACTIVE_REPO: (state, { repo }) => {
     state.activeRepo = repo
-  // Vue.set(state.activeRepo, 1, repo)
+  },
+
+  ADD_PROJECT: (state, { repo }) => {
+    Vue.set(state.projects, repo.id, repo)
   },
 
   SET_PROFILE: (state, { profile }) => {
     Vue.set(state.profile, 'me', profile)
+  },
+
+  SET_USER_ID: (state, { userId }) => {
+    state.userId = userId
   }
 }
