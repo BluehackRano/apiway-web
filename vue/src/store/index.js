@@ -11,6 +11,7 @@ export function createStore () {
     state: {
       activeType: null,
       activeProjectId: null,
+      activeInstanceId: null,
       itemsPerPage: 20,
       userId: null,
       items: {/* [id: number]: Item */},

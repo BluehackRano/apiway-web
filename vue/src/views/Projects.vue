@@ -133,11 +133,12 @@ export default {
     },
     runTest (repo) {
       console.log('runTest: ' + repo)
-      addProject(this.$store, repo).then((project) => {
-        this.loading = false
+      addProject(this.$store, repo)
+        .then((project) => {
+          this.loading = false
 //        this.$store.dispatch('SET_ACTIVE_PROJECT', { project: project })
-        this.$router.replace(`/dashboard/${repo.full_name}`)
-      })
+          this.$router.replace(`/dashboard/${repo.full_name}`)
+        })
     }
   }
 }
@@ -190,8 +191,17 @@ function fetchOrgRepos (store, org, token) {
 function addProject (store, repo) {
   return store.dispatch('ADD_PROJECT', {
     repo: repo
+  }).then(() => addInstance(store, store.state.activeProjectId))
+    .then(() => {
+      console.log('done ADD_PROJECT in Projects.vue')
+    })
+}
+
+function addInstance (store, projectId) {
+  return store.dispatch('ADD_INSTANCE', {
+    projectId: projectId
   }).then(() => {
-    console.log('done ADD_PROJECT in Projects.vue')
+    console.log('done ADD_INSTANCE in Projects.vue')
   })
 }
 </script>

@@ -44,6 +44,10 @@ export default {
     state.activeProjectId = projectId
   },
 
+  SET_ACTIVE_INSTANCE: (state, { instanceId }) => {
+    state.activeInstanceId = instanceId
+  },
+
   ADD_PROJECT: (state, { repo }) => {
     Vue.set(state.projects, repo.id, repo)
   },

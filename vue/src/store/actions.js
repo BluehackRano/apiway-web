@@ -7,7 +7,8 @@ import {
   fetchRepos,
   fetchOrgRepos,
   updateUserProfile,
-  addProject
+  addProject,
+  addInstance
 } from '../api'
 
 export default {
@@ -101,6 +102,15 @@ export default {
         console.log(data)
         let projectId = data.data.projectId
         commit('SET_ACTIVE_PROJECT', { projectId })
+      })
+  },
+
+  ADD_INSTANCE: ({ commit, state }, { projectId }) => {
+    return addInstance(projectId)
+      .then((data) => {
+        console.log(data)
+        let instanceId = data.data.instanceId
+        commit('SET_ACTIVE_INSTANCE', { instanceId })
       })
   }
 }
