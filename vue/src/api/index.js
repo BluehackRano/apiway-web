@@ -186,3 +186,23 @@ export function addProject(repo, userId) {
   })
 })
 }
+
+export function addInstance(projectId) {
+  return new Promise ((resolve, reject) => {
+    var apiway = new ApiWay({})
+
+    console.log('addInstance: projectId = ' + projectId)
+    var data = {
+      projectId: projectId
+    }
+    apiway.getInstance().addInstance(data).then(res => {
+      console.log(res)
+      if (res!= null) {
+        resolve(res.data)
+      }
+    }).catch(err => {
+      console.error(err)
+      reject(err)
+    })
+  })
+}
