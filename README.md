@@ -16,6 +16,13 @@ npm install
 # serve with hot reload at localhost:8080
 npm run dev
 
+# localhost 환경에서 github API를 사용시 apiway.io/login에서 Github Authentication을 완료한 후 localstorage에 저장된 token을 아래 파일에 추가해야 함
+- ${TOP}/vue/config/local.env.js -
+exports.token = {
+  github: 'xxxxxxxxxxxx',
+  bitbucket: ''
+}
+
 # build for production with minification
 npm run build
 

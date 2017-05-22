@@ -1,0 +1,4 @@
+exports.token = {
+  github: '',
+  bitbucket: ''
+}
