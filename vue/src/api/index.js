@@ -168,7 +168,7 @@ export function addProject(repo, userId) {
     console.log('project = ' + repo)
     var data = {
       name: repo.name,
-      fullName: repo.fullName,
+      full_name: repo.full_name,
       owner: userId,
       html_url: repo.html_url,
       git_url: repo.git_url,

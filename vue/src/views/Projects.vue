@@ -133,12 +133,11 @@ export default {
     },
     runTest (repo) {
       console.log('runTest: ' + repo)
-      addProject(this.$store, repo).then(() => {
+      addProject(this.$store, repo).then((project) => {
         this.loading = false
-        this.$store.dispatch('SET_ACTIVE_REPO', { repo: repo })
+//        this.$store.dispatch('SET_ACTIVE_PROJECT', { project: project })
         this.$router.replace(`/dashboard/${repo.full_name}`)
       })
-//      this.$router.replace('/dashboard/bluehackmaster/cubePRO3-android') // + repo.full_name)
     }
   }
 }

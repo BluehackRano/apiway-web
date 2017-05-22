@@ -13,7 +13,7 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
-    "apiway.js": "^0.0.8",
+    "apiway.js": "^0.0.13",
     "vue": "^2.2.5",
     "vue-chartjs": "^2.3.7",
     "vue-router": "^2.2.0",
