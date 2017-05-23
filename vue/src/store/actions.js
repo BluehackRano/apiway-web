@@ -5,6 +5,7 @@ import {
   fetchOrgs,
   fetchProfile,
   fetchRepos,
+  fetchInstancesByUser,
   fetchOrgRepos,
   updateUserProfile,
   addProject,
@@ -70,6 +71,14 @@ export default {
       .then(repos => {
         console.log('FETCH_REPOS then in actions.js')
         commit('SET_REPOS', { repos })
+      })
+  },
+
+  FETCH_INSTANCES_BY_USER: ({ commit, dispatch, state }, { userId }) => {
+    return fetchInstancesByUser(userId)
+      .then(instances => {
+        console.log('FETCH_INSTANCES_BY_USER then in actions.js')
+        commit('SET_INSTANCES', { instances })
       })
   },
 

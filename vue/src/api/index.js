@@ -103,6 +103,23 @@ export function fetchRepos(token) {
   })
 }
 
+export function fetchInstancesByUser(userId) {
+  return new Promise ((resolve, reject) => {
+    var apiway = new ApiWay({})
+    console.log('fetchInstancesByUser: ' + userId)
+    apiway.getInstance().getInstancesByUser(userId).then(res => {
+      console.log('.......')
+      console.log(res)
+      if (res != null) {
+        resolve(res.data)
+      }
+    }).catch(err => {
+      console.error(err)
+      reject(err)
+    })
+  })
+}
+
 export function fetchOrgRepos(organization, token) {
   return new Promise ((resolve, reject) => {
     var github = new GitHub({token: token})

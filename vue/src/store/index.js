@@ -19,6 +19,7 @@ export function createStore () {
       profile: {},
       projects: {},
       repos: {/* [id: string]: Repo */},
+      instances: {/* [id: string]: Repo */},
       users: {/* [id: string]: User */},
       lists: {
         top: [/* number */],

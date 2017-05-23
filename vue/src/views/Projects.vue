@@ -64,6 +64,9 @@ export default {
     repos () {
       return this.$store.state.repos
     },
+    instances () {
+      return this.$store.state.instances
+    },
     token () {
       return oauth.getToken(this.$auth)
     }
@@ -92,6 +95,7 @@ export default {
   beforeMount () {
     this.fetchProfile()
     this.fetchOrgs()
+    this.fetchInstancesByUser()
   },
 
   mounted: function () {
@@ -121,6 +125,13 @@ export default {
       this.loading = true
       console.log(this.$store.state.repos)
       fetchRepos(this.$store, this.token).then(() => {
+        this.loading = false
+      })
+    },
+    fetchInstancesByUser () {
+      this.loading = true
+      console.log(this.$store.state.instances)
+      fetchInstancesByUser(this.$store, this.$store.state.userId).then(() => {
         this.loading = false
       })
     },
@@ -175,6 +186,14 @@ function fetchRepos (store, token) {
       console.log('done FETCH_REPOSin Projects.vue')
     })
   }
+}
+
+function fetchInstancesByUser (store, userId) {
+  return store.dispatch('FETCH_INSTANCES_BY_USER', {
+    userId: userId
+  }).then(() => {
+    console.log('done FETCH_INSTANCES_BY_USER Projects.vue')
+  })
 }
 
 function fetchOrgRepos (store, org, token) {
