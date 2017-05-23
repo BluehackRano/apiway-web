@@ -41,7 +41,7 @@ export default {
     instances.forEach(instance => {
       if (instance) {
         // console.log('SET_REPOS:' + repo.id)
-        Vue.set(state.instances, instance.id, instance)
+        Vue.set(state.instances, instance._id, instance)
       }
     })
   },

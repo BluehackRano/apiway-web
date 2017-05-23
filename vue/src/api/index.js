@@ -111,7 +111,7 @@ export function fetchInstancesByUser(userId) {
       console.log('.......')
       console.log(res)
       if (res != null) {
-        resolve(res.data)
+        resolve(res.data.data.instances)
       }
     }).catch(err => {
       console.error(err)

@@ -78,6 +78,7 @@ export default {
     return fetchInstancesByUser(userId)
       .then(instances => {
         console.log('FETCH_INSTANCES_BY_USER then in actions.js')
+        console.log(instances)
         commit('SET_INSTANCES', { instances })
       })
   },
