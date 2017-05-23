@@ -69,6 +69,9 @@ export default {
     },
     token () {
       return oauth.getToken(this.$auth)
+    },
+    userId () {
+      return this.$store.state.userId
     }
   },
 
@@ -95,7 +98,6 @@ export default {
   beforeMount () {
     this.fetchProfile()
     this.fetchOrgs()
-    this.fetchInstancesByUser()
   },
 
   mounted: function () {
@@ -104,7 +106,8 @@ export default {
 
   watch: {
     organizations: 'fetchOrgs',
-    profile: 'fetchProfile'
+    profile: 'fetchProfile',
+    userId: 'fetchInstancesByUser'
   },
 
   methods: {
