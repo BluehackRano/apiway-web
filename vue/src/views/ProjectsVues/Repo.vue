@@ -39,7 +39,11 @@ export default {
     },
     userId () {
       return this.$store.state.userId
+    },
+    instances () {
+      return this.$store.state.instances
     }
+
   },
 
   beforeCreate: function () {
@@ -59,12 +63,13 @@ export default {
   },
 
   title () {
-    return 'RepoInfo'
+    return 'Projects'
   },
 
   beforeMount () {
     this.fetchProfile()
     this.fetchOrgs()
+    this.fetchInstancesByUser()
   },
 
   mounted: function () {
@@ -95,6 +100,13 @@ export default {
       this.loading = true
       console.log(this.$store.state.repos)
       fetchRepos(this.$store, this.token).then(() => {
+        this.loading = false
+      })
+    },
+    fetchInstancesByUser () {
+      this.loading = true
+      console.log(this.$store.state.instances)
+      fetchInstancesByUser(this.$store, this.$store.state.userId).then(() => {
         this.loading = false
       })
     },
@@ -149,6 +161,14 @@ function fetchRepos (store, token) {
       console.log('done FETCH_REPOSin Repo.vue')
     })
   }
+}
+
+function fetchInstancesByUser (store, userId) {
+  return store.dispatch('FETCH_INSTANCES_BY_USER', {
+    userId: userId
+  }).then(() => {
+    console.log('done FETCH_INSTANCES_BY_USER Repo.vue')
+  })
 }
 
 function fetchOrgRepos (store, org, token) {

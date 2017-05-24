@@ -1,4 +1,4 @@
 exports.token = {
-  github: 'b5eb83f1f6ead61df3d5d82912e1d59e88903e0d',
+  github: '9e28e7ca88bd3378fcdbbf42d6d1c5cb056149b4',
   bitbucket: ''
 }
