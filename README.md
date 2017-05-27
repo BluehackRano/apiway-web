@@ -1,6 +1,6 @@
 ![logo](https://github.com/ApiWay/apiway-design/blob/master/img/logo.png)
 
-# ApiWay
+# ApiWay: Web
 Web Application for apiway.io
 
 ## Build 
