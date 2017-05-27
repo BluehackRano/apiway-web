@@ -52,6 +52,8 @@ npm test
 ##### Javascript
 * [apiway-sdk-js](https://github.com/ApiWay/apiway-sdk-js)
 * [npm: apiway.js](https://www.npmjs.com/package/apiway.js)
+#### Job
+* [apiway-job](https://github.com/ApiWay/apiway-job)
 #### Cloud (Kubernetes)
 * [apiway-cloud-orchestration](https://github.com/ApiWay/apiway-cloud-orchestration)
 #### Design
