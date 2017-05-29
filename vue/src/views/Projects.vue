@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <div>
-             <router-link :to="{ name: 'DashboardAdd'}">Add Instance</router-link>
+             <router-link :to="{ name: 'Projects Add'}">Add Project</router-link>
         </div>
         <div class="col-md-4" style="min-width: 20rem;">
             <cvsInfo/>
