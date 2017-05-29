@@ -10,6 +10,7 @@ import Full from 'containers/Full'
 import Login from 'views/Login'
 import Dashboard from 'views/Dashboard'
 import Projects from 'views/Projects'
+import InstanceDetail from 'views/InstanceDetail'
 
 Vue.use(Router)
 Vue.use(Resource)
@@ -92,13 +93,13 @@ export function createRouter () {
           },
           {
             path: 'dashboard/:user/:repo',
-            name: 'Dashboard',
-            component: Dashboard
+            name: 'Instance Detail',
+            component: InstanceDetail
           },
           {
-            path: 'dashboard/add',
-            name: 'DashboardAdd',
-            component: Dashboard
+            path: 'projects/add',
+            name: 'Projects Add',
+            component: Projects
           },
           {
             path: 'projects',
