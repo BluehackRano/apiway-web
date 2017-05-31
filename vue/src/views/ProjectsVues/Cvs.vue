@@ -26,8 +26,12 @@
         </div>
  </template>
 
-<script src='../../views/FunctionModule/funcModule.js'>
+<script>
+import vueModule from '../../views/FunctionModule/vueModule'
 
+export default {
+  extends: vueModule
+}
 </script>
 
 
