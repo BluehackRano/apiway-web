@@ -1,7 +1,12 @@
+<template>
+
+</template>
+<script>
+
 var oauth = require('../../util/oauth')
 
 export default {
-  name: 'Cvs',
+  name: 'MyProject',
   data: () => ({
     loading: true
   }),
@@ -50,7 +55,7 @@ export default {
   beforeMount () {
     this.fetchProfile()
     this.fetchOrgs()
-    this.fetchInstancesByUser()
+    // this.fetchInstancesByUser()
   },
 
   mounted: function () {
@@ -106,6 +111,13 @@ export default {
 //        this.$store.dispatch('SET_ACTIVE_PROJECT', { project: project })
           this.$router.replace(`/dashboard/${repo.full_name}`)
         })
+    },
+    addInstance (projectId) {
+      this.loading = true
+      console.log(this.$store.state.instances.projectId)
+      addInstance(this.$store, projectId).then(() => {
+        this.loading = false
+      })
     }
   }
 }
@@ -115,7 +127,7 @@ function fetchProfile (store, token) {
     return store.dispatch('FETCH_USER_PROFILE', {
       token: token
     }).then(() => {
-      console.log('done FETCH_USER_PROFILE in Cvs.vue')
+      console.log('done FETCH_USER_PROFILE in MyProject.vue')
       store.dispatch('UPDATE_USER_PROFILE', {})
         .then(() => {
         }
@@ -129,7 +141,7 @@ function fetchOrgs (store, token) {
     return store.dispatch('FETCH_ORGS', {
       token: token
     }).then(() => {
-      console.log('done FETCH_ORGS in Cvs.vue')
+      console.log('done FETCH_ORGS in MyProject.vue')
     })
   }
 }
@@ -139,7 +151,7 @@ function fetchRepos (store, token) {
     return store.dispatch('FETCH_REPOS', {
       token: token
     }).then(() => {
-      console.log('done FETCH_REPOSin Cvs.vue')
+      console.log('done FETCH_REPOSin MyProject.vue')
     })
   }
 }
@@ -148,7 +160,7 @@ function fetchInstancesByUser (store, userId) {
   return store.dispatch('FETCH_INSTANCES_BY_USER', {
     userId: userId
   }).then(() => {
-    console.log('done FETCH_INSTANCES_BY_USER Cvs.vue')
+    console.log('done FETCH_INSTANCES_BY_USER MyProject.vue')
   })
 }
 
@@ -158,7 +170,7 @@ function fetchOrgRepos (store, org, token) {
       org: org,
       token: token
     }).then(() => {
-      console.log('done FETCH_ORG_REPOS in Cvs.vue')
+      console.log('done FETCH_ORG_REPOS in MyProject.vue')
     })
   }
 }
@@ -168,7 +180,7 @@ function addProject (store, repo) {
     repo: repo
   }).then(() => addInstance(store, store.state.activeProjectId))
     .then(() => {
-      console.log('done ADD_PROJECT in Cvs.vue')
+      console.log('done ADD_PROJECT in MyProject.vue')
     })
 }
 
@@ -176,6 +188,10 @@ function addInstance (store, projectId) {
   return store.dispatch('ADD_INSTANCE', {
     projectId: projectId
   }).then(() => {
-    console.log('done ADD_INSTANCE in Cvs.vue')
+    console.log('done ADD_INSTANCE in Running')
   })
 }
+</script>
+<style>
+
+</style>

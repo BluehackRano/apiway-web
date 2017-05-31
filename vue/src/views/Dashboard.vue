@@ -1,8 +1,8 @@
 <template>
     <div class="row">
-        <div class="col-md-4" style="min-width: 20rem;">
+<!--         <div class="col-md-4" style="min-width: 20rem;">
             <myProject/>
-        </div>
+        </div> -->
         <div class="col-md-8">
             <Instance/>
         </div>
