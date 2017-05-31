@@ -112,6 +112,16 @@ export default {
           this.$router.replace(`/dashboard/${repo.full_name}`)
         })
     },
+    addProject (repo) {
+      console.log('addProject: ' + repo)
+      addProject(this.$store, repo)
+        .then((project) => {
+          this.loading = false
+//        this.$store.dispatch('SET_ACTIVE_PROJECT', { project: project })
+          // this.$router.replace(`/dashboard/${repo.full_name}`)
+          this.$router.replace(`/dashboard/`)
+        })
+    },
     addInstance (projectId) {
       this.loading = true
       console.log(this.$store.state.instances.projectId)

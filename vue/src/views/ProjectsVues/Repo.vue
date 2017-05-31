@@ -8,7 +8,7 @@
           <ul class="list-group list-group-flush">
             <li class="list-group-item justify-content-between" v-for="repo in repos">
               {{ repo.full_name }}
-              <button type="button" @click="runTest(repo)" class="btn btn-info">Add Project</button>
+              <button type="button" @click="addProject(repo)" class="btn btn-info">Add Project</button>
             </li>
           </ul>
         </div>

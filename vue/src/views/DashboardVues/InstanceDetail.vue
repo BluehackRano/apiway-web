@@ -5,7 +5,7 @@
             <p>{{this.$route.params.repo}}</p>
         </div>
         <div>
-            <button type="button" @click="addInstance(this.$route.params.repo)" class="btn btn-info" >RUN</button>
+            <button type="button" @click="addInstance(repoData)" class="btn btn-info" >RUN</button>
         </div>
     </div>
 </template>
@@ -14,7 +14,12 @@
 import vueModule from '../../views/FunctionModule/vueModule'
 
 export default {
-  extends: vueModule
+  extends: vueModule,
+  computed: {
+    repoData () {
+      return this.$route.params.repo
+    }
+  }
 }
 </script>
 
