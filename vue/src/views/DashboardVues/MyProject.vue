@@ -7,7 +7,7 @@
           </div>
           <ul class="list-group list-group-flush" >
             <li class="list-group-item">
-              <a @click="fetchRepos">
+              <a @click="">
                 <div class="media">
                   <img class="d-flex align-self-center mr-3 avatar" :src="profile.me.avatar_url">
                   <h6 class="mt-0">{{profile.me.login}}</h6>
@@ -15,7 +15,7 @@
               </a>
             </li>
             <li class="list-group-item" v-for="organization in organizations">
-              <a @click="fetchOrgRepos(organization.login)">
+              <a @click="">
                 <div class="media">
                   <img class="d-flex align-self-center mr-3 avatar" :src="organization.avatar_url">
                     <h6 class="mt-0">{{organization.login}}</h6>

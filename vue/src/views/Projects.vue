@@ -1,13 +1,16 @@
 <template>
-    <div class="row">
-        <div>
-             <router-link :to="{ name: 'DashboardAdd'}">Add Instance</router-link>
+    <div>
+        <div type="button" @click="" class="btn btn-info" >
+             <router-link :to="{ name: 'Projects Add'}">Add Project</router-link>
         </div>
-        <div class="col-md-4" style="min-width: 20rem;">
-            <cvsInfo/>
-        </div>
-        <div class="col-md-8">
-            <repoInfo/>
+
+        <div class="row">
+            <div class="col-md-4" style="min-width: 20rem;">
+                <cvsInfo/>
+            </div>
+            <div class="col-md-8">
+                <repoInfo/>
+            </div>
         </div>
     </div>
 </template>

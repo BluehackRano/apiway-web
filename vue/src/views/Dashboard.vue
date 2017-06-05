@@ -1,48 +1,35 @@
 <template>
-  <!--<div class="animated fadeIn">-->
-  <!--This is ApiWay-->
-  <!--</div>-->
-  <div class="index-component">
-    <!--<button @click="authLogin()">Login</button>-->
-    <!--<button @click="authRegister()">Register</button>-->
-    <!--<button @click="authLogout()">Logout</button>-->
-
-    <!--<hr />-->
-
-    <!--<button v-if="!this.$auth.isAuthenticated()" @click="auth('github')" class="button&#45;&#45;github">Auth github</button>-->
-    <!--<button @click="auth('github')" class="button&#45;&#45;github">Auth github</button>-->
-    <hr />
-  </div>
+    <div class="row">
+<!--         <div class="col-md-4" style="min-width: 20rem;">
+            <myProject/>
+        </div> -->
+        <div class="col-md-8">
+            <Instance/>
+        </div>
+    </div>
 </template>
 
 <script>
-
-var oauth = require('../util/oauth')
+import myProject from '../views/DashboardVues/MyProject'
+import Instance from '../views/DashboardVues/Instance'
 
 export default {
   name: 'dashboard',
-
-  computed: {
-    token () {
-      return oauth.getToken(this.$auth)
-    }
-  },
-
-  beforeCreate: function () {
-    console.log('beforeCreate')
-    if (!oauth.isAuthenticated(this.$auth)) {
-      console.log('go home...')
-      this.$router.replace('/login')
-    }
-  },
-  created: function () {
-    console.log('created in Dashboard : ' + this.$route.params.repo)
-    console.log(this.$store.getters.activeRepo)
-  },
-  ready () {
-    console.log('bok: ready')
-  },
-  methods: {
+  components: {
+    myProject,
+    Instance
   }
 }
 </script>
+
+
+<style scoped>
+/*  .avatar {
+    border-radius: 50px;
+  }
+  .card {
+    border-radius: 3px;
+    box-shadow: 0 0 10px 0 rgba(53, 58, 73, 0.20); }*/
+
+
+</style>
