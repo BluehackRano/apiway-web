@@ -5,7 +5,7 @@
           <div class="card text-center">
               <img class="card-img-top mb-2 mt-2" src="/static/img/logo.png" alt="Card image cap">
             <div class="card-block">
-              <button type="button" @click="auth('github')" class="btn block">
+              <button type="button" @click="requestLogin('github')" class="btn block">
                 <i class="fa fa-github-alt"></i> Authorize <strong>Github</strong><i class="fa fa-caret-right"></i>
               </button>
             </div>
@@ -21,6 +21,15 @@ export default {
   name: 'Login',
   beforeCreate: function () {
     console.log('beforeCreate')
+
+    if (localStorage.getItem('userId')) {
+      console.log('go dashboard')
+      this.$router.push({ path: 'dashboard' })
+    } else {
+      console.log('not a member')
+    }
+
+    /*
     if (this.$auth.isAuthenticated()) {
       console.log('go dashboard')
       this.getProfile('github')
@@ -28,6 +37,7 @@ export default {
     } else {
       console.log('not authorized')
     }
+    */
   },
   created: function () {
     console.log('created')
@@ -40,6 +50,16 @@ export default {
   },
 
   methods: {
+    requestLogin: function (provider) {
+      console.log('requestLogin : ', provider)
+
+      this.$store.dispatch('FETCH_USER_PROFILE', {
+        token: this.token
+      }).then(() => {
+        this.$router.replace('/dashboard')
+      })
+    },
+
     authLogin: function () {
       let user = {
         email: 'john.doe@domain.com',
