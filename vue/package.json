@@ -13,7 +13,7 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
-    "apiway.js": "latest",
+    "apiway-sdk-js": "latest",
     "vue": "^2.2.5",
     "vue-chartjs": "^2.3.7",
     "vue-router": "^2.2.0",
@@ -23,7 +23,7 @@
     "github-api": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
-    "gulp-sass":"^3.1.0",
+    "gulp-sass": "^3.1.0",
     "firebase": "^3.7.2",
     "vuex": "^2.3.1",
     "vuex-router-sync": "^4.1.2"
