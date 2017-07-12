@@ -23,8 +23,13 @@ export default {
   beforeCreate: function () {
     console.log('beforeCreate')
 
-    if (localStorage.getItem('access-token')) {
-      // this.$router.push({ path: 'dashboard' })
+    let aToken = localStorage.getItem('access-token')
+    if (aToken) {
+      this.$store.dispatch('FETCH_USER_PROFILE', {
+        token: aToken
+      }).then(() => {
+        this.$router.replace('/')
+      })
     }
   },
 
@@ -45,19 +50,9 @@ export default {
 
   methods: {
     requestLogin: function (provider) {
-      /*
-      const spx = new Sphinx()
-      let auth = spx.getAuthenticate()
-      auth.authenticate(provider)
-        .then(res => {
-          console.log('ASADFASDFSADFSAFSAFASDFASDFASDFASDFASDf')
-        })
-        .catch(
-          console.log('ERRORROOROROOO')
-        )
-        */
       // To do : get access-token from the Sphinx.js
-      let aToken = 'aab3bee7fff8939caa1d0abd73257e6bfa33ea1f'
+      // let aToken = 'aab3bee7fff8939caa1d0abd73257e6bfa33ea1f'
+      let aToken = '319f4402220ab5a87755d12252c3f0c6113f374b'
 
       // init the accessToken
       this.accessToken = aToken

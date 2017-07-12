@@ -22,7 +22,12 @@ import repoInfo from '../views/ProjectsVues/Repo'
 export default {
   name: 'projects',
   beforeCreate: function () {
-    if (!localStorage.getItem('access-token')) {
+    let aToken = localStorage.getItem('access-token')
+    if (aToken) {
+      this.$store.dispatch('FETCH_USER_PROFILE', {
+        token: aToken
+      }).then(() => {})
+    } else {
       this.$router.push({ path: 'login' })
     }
   },
