@@ -15,6 +15,11 @@ import Instance from '../views/DashboardVues/Instance'
 
 export default {
   name: 'dashboard',
+  beforeCreate: function () {
+    if (!localStorage.getItem('access-token')) {
+      this.$router.push({ path: 'login' })
+    }
+  },
   components: {
     myProject,
     Instance

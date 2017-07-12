@@ -21,6 +21,11 @@ import repoInfo from '../views/ProjectsVues/Repo'
 
 export default {
   name: 'projects',
+  beforeCreate: function () {
+    if (!localStorage.getItem('access-token')) {
+      this.$router.push({ path: 'login' })
+    }
+  },
   components: {
     cvsInfo,
     repoInfo
