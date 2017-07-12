@@ -16,6 +16,7 @@
 </template>
 
 <script>
+// var Sphinx = require('sphinx-js')
 
 export default {
   name: 'Login',
@@ -23,7 +24,7 @@ export default {
     console.log('beforeCreate')
 
     if (localStorage.getItem('access-token')) {
-      this.$router.push({ path: 'dashboard' })
+      // this.$router.push({ path: 'dashboard' })
     }
   },
 
@@ -33,6 +34,9 @@ export default {
 
   computed: {
     accessToken: {
+      get: function () {
+        return localStorage.getItem('access-token')
+      },
       set: function (aToken) {
         localStorage.setItem('access-token', aToken)
       }
@@ -41,6 +45,17 @@ export default {
 
   methods: {
     requestLogin: function (provider) {
+      /*
+      const spx = new Sphinx()
+      let auth = spx.getAuthenticate()
+      auth.authenticate(provider)
+        .then(res => {
+          console.log('ASADFASDFSADFSAFSAFASDFASDFASDFASDFASDf')
+        })
+        .catch(
+          console.log('ERRORROOROROOO')
+        )
+        */
       // To do : get access-token from the Sphinx.js
       let aToken = 'aab3bee7fff8939caa1d0abd73257e6bfa33ea1f'
 
