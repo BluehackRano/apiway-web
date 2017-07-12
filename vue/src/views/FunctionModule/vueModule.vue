@@ -3,7 +3,7 @@
 </template>
 <script>
 
-var oauth = require('../../util/oauth')
+let auth = require('../../util/auth')
 
 export default {
   name: 'MyProject',
@@ -21,7 +21,7 @@ export default {
       return this.$store.state.repos
     },
     token () {
-      return oauth.getToken(this.$auth)
+      return auth.getToken()
     },
     userId () {
       return this.$store.state.userId
@@ -34,18 +34,16 @@ export default {
 
   beforeCreate: function () {
     console.log('beforeCreate')
-    if (!oauth.isAuthenticated(this.$auth)) {
+    if (!auth.isAuthenticated()) {
       console.log('go to Login')
       this.$router.replace('/login')
-    } else {
-
     }
   },
   created: function () {
   },
 
   asyncData ({ store }) {
-    return store.dispatch('FETCH_ORGS', { token: this.token })
+    return store.dispatch('FETCH_ORGS', { token: auth.getToken() })
   },
 
   title () {
