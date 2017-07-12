@@ -22,44 +22,36 @@ export default {
   beforeCreate: function () {
     console.log('beforeCreate')
 
-    if (localStorage.getItem('userId')) {
+    if (localStorage.getItem('access-token')) {
       console.log('go dashboard')
-      this.$router.push({ path: 'dashboard' })
+      // this.$router.push({ path: 'dashboard' })
     } else {
       console.log('not a member')
     }
-
-    /*
-    if (this.$auth.isAuthenticated()) {
-      console.log('go dashboard')
-      this.getProfile('github')
-      this.$router.push({ path: 'dashboard' })
-    } else {
-      console.log('not authorized')
-    }
-    */
   },
+
   created: function () {
     console.log('created')
   },
 
   computed: {
-    token () {
-      return this.$auth.getToken()
-    }
   },
 
   methods: {
     requestLogin: function (provider) {
       console.log('requestLogin : ', provider)
 
+      // To do : get access-token from the Sphinx.js
+      localStorage.setItem('access-token', 'b0b09688535a6e0c059ed857f3b0f1814854ca8b')
+
       this.$store.dispatch('FETCH_USER_PROFILE', {
-        token: this.token
+        token: 'b0b09688535a6e0c059ed857f3b0f1814854ca8b' // this.token
       }).then(() => {
         this.$router.replace('/dashboard')
       })
-    },
+    }
 
+    /*
     authLogin: function () {
       let user = {
         email: 'john.doe@domain.com',
@@ -110,7 +102,7 @@ export default {
           params: { access_token: this_.$auth.getToken() }
         }).then(function (response) {
           this_.response = response
-          console.log(response)
+          console.log('USER : ' + response)
         })
       } else if (provider === 'facebook') {
         this_.$http.get('https://graph.facebook.com/v2.5/me', {
@@ -152,11 +144,13 @@ export default {
         this_.response = err
       })
     }
+    */
   }
 }
 </script>
 
 <style scoped>
+
   @import "/static/css/apiway.css";
 
   .app {

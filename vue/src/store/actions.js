@@ -61,7 +61,7 @@ export default {
   FETCH_USER_PROFILE: ({ commit, dispatch, state }, { token }) => {
     return fetchProfile(token)
       .then(profile => {
-        console.log('FETCH_USER_PROFILE then in actions.js : profile = ' + profile)
+        console.log('FETCH_USER_PROFILE then in actions.js : profile = ' + JSON.stringify(profile))
         commit('SET_PROFILE', { profile })
       })
   },
