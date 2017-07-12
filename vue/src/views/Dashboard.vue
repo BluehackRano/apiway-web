@@ -13,14 +13,15 @@
 import myProject from '../views/DashboardVues/MyProject'
 import Instance from '../views/DashboardVues/Instance'
 
+let auth = require('../util/auth')
+
 export default {
   name: 'dashboard',
   beforeCreate: function () {
-    let aToken = localStorage.getItem('access-token')
-    if (aToken) {
+    if (auth.isAuthenticated()) {
       this.$store.dispatch('FETCH_USER_PROFILE', {
-        token: aToken
-      }).then(() => {})
+        token: auth.getToken()
+      }).then(() => { })
     } else {
       this.$router.push({ path: 'login' })
     }

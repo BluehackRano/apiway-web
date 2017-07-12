@@ -19,14 +19,15 @@
 import cvsInfo from '../views/ProjectsVues/Cvs'
 import repoInfo from '../views/ProjectsVues/Repo'
 
+let auth = require('../util/auth')
+
 export default {
   name: 'projects',
   beforeCreate: function () {
-    let aToken = localStorage.getItem('access-token')
-    if (aToken) {
+    if (auth.isAuthenticated()) {
       this.$store.dispatch('FETCH_USER_PROFILE', {
-        token: aToken
-      }).then(() => {})
+        token: auth.getToken()
+      }).then(() => { })
     } else {
       this.$router.push({ path: 'login' })
     }

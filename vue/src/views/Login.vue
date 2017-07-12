@@ -17,35 +17,24 @@
 
 <script>
 // var Sphinx = require('sphinx-js')
+let auth = require('../util/auth')
 
 export default {
   name: 'Login',
   beforeCreate: function () {
     console.log('beforeCreate')
 
-    let aToken = localStorage.getItem('access-token')
-    if (aToken) {
+    if (auth.isAuthenticated()) {
       this.$store.dispatch('FETCH_USER_PROFILE', {
-        token: aToken
+        token: auth.getToken()
       }).then(() => {
-        this.$router.replace('/')
+        this.$router.replace('/dashboard')
       })
     }
   },
 
   created: function () {
     console.log('created')
-  },
-
-  computed: {
-    accessToken: {
-      get: function () {
-        return localStorage.getItem('access-token')
-      },
-      set: function (aToken) {
-        localStorage.setItem('access-token', aToken)
-      }
-    }
   },
 
   methods: {
@@ -55,7 +44,7 @@ export default {
       let aToken = '319f4402220ab5a87755d12252c3f0c6113f374b'
 
       // init the accessToken
-      this.accessToken = aToken
+      auth.setToken(aToken)
       this.$store.dispatch('FETCH_USER_PROFILE', {
         token: aToken
       }).then(() => {
