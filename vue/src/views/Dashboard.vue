@@ -16,7 +16,12 @@ import Instance from '../views/DashboardVues/Instance'
 export default {
   name: 'dashboard',
   beforeCreate: function () {
-    if (!localStorage.getItem('access-token')) {
+    let aToken = localStorage.getItem('access-token')
+    if (aToken) {
+      this.$store.dispatch('FETCH_USER_PROFILE', {
+        token: aToken
+      }).then(() => {})
+    } else {
       this.$router.push({ path: 'login' })
     }
   },
