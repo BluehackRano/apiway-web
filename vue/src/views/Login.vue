@@ -23,10 +23,7 @@ export default {
     console.log('beforeCreate')
 
     if (localStorage.getItem('access-token')) {
-      console.log('go dashboard')
-      // this.$router.push({ path: 'dashboard' })
-    } else {
-      console.log('not a member')
+      this.$router.push({ path: 'dashboard' })
     }
   },
 
@@ -35,19 +32,41 @@ export default {
   },
 
   computed: {
+    accessToken: {
+      set: function (aToken) {
+        localStorage.setItem('access-token', aToken)
+      }
+    }
   },
 
   methods: {
     requestLogin: function (provider) {
-      console.log('requestLogin : ', provider)
-
       // To do : get access-token from the Sphinx.js
-      localStorage.setItem('access-token', 'b0b09688535a6e0c059ed857f3b0f1814854ca8b')
+      let aToken = 'aab3bee7fff8939caa1d0abd73257e6bfa33ea1f'
 
+      // init the accessToken
+      this.accessToken = aToken
       this.$store.dispatch('FETCH_USER_PROFILE', {
-        token: 'b0b09688535a6e0c059ed857f3b0f1814854ca8b' // this.token
+        token: aToken
       }).then(() => {
         this.$router.replace('/dashboard')
+      })
+    },
+
+    // To do : remove this method
+    auth: function (provider) {
+      this.response = null
+
+      var this_ = this
+      this.$auth.authenticate(provider).then(function (authResponse) {
+        console.log(authResponse)
+        console.log(this_.$auth.isAuthenticated())
+        // init the accessToken
+        this.accessToken = this_.token
+
+        this.requestLogin(provider)
+      }).catch(function (err) {
+        this_.response = err
       })
     }
 
