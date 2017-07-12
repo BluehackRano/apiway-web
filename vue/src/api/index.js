@@ -1,7 +1,7 @@
 // this is aliased in webpack config based on server/client build
 import { createAPI } from 'create-api'
 import GitHub from 'github-api'
-import ApiWay from 'apiway.js'
+import ApiWay from 'apiway-sdk-js'
 
 const logRequests = !!process.env.DEBUG_API
 
