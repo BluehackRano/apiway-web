@@ -14,7 +14,7 @@ export function createStore () {
       activeProjectId: null,
       activeInstanceId: null,
       itemsPerPage: 20,
-      userId: '596882f09815455b4ba447a5',
+      userId: null,
       displayName: null,
       items: {/* [id: number]: Item */},
       orgs: {},

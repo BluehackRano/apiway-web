@@ -41,7 +41,7 @@ export default {
     requestLogin: function (provider) {
       // To do : get access-token from the Sphinx.js
       // let aToken = 'aab3bee7fff8939caa1d0abd73257e6bfa33ea1f'
-      let aToken = '41b5d260a65bdb47c90a1eda29789ee8f8ab6660'
+      let aToken = '55b0824e07877c96d4593b4f775c8c13630f3386'
 
       // init the accessToken
       auth.setToken(aToken)

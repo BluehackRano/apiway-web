@@ -12,11 +12,6 @@ export default {
       return []
     }
   },
-
-  bok () {
-
-  },
-
   // items that should be currently displayed.
   // this Array may not be fully fetched.
   activeItems (state, getters) {
@@ -31,7 +26,5 @@ export default {
     return state.accessToken
   },
 
-  userId (state, getters) {
-    return state.userId
-  }
+  userId: state => () => state.userId
 }
