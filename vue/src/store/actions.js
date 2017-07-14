@@ -63,8 +63,7 @@ export default {
       .then(profile => {
         console.log('FETCH_USER_PROFILE then in actions.js : profile = ' + JSON.stringify(profile))
         commit('SET_PROFILE', { profile })
-        console.log('data ...')
-        console.log(profile.login)
+        console.log('displayName : ' + profile.login)
         let displayName = profile.login
         commit('SET_DISPLAY_NAME', { displayName })
         updateUserProfile(state.profile)

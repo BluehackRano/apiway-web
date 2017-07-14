@@ -158,8 +158,6 @@ export function watchList (type, cb) {
 export function updateUserProfile(profile) {
   return new Promise ((resolve, reject) => {
     var apiway = new ApiWay({})
-
-    console.log('profile = ' + profile)
     var data = {
       login: profile.me.login,
       avatarUrl: profile.me.avatar_url,

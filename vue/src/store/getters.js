@@ -22,9 +22,7 @@ export default {
     return state.activeRepo
   },
 
-  accessToken (state, getters) {
-    return state.accessToken
-  },
+  accessToken: state => () => state.accessToken,
 
   userId: state => () => state.userId
 }

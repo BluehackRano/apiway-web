@@ -1,27 +1,17 @@
-import { mapState } from 'vuex'
-
 export const Header = {
   beforeCreate: function () {
     console.log('Header: beforeCreate')
+    let store = this.$store
+    this.$store.watch(this.$store.getters.accessToken,
+      () => {
+        fetchProfile(store)
+      },
+      {
+        deep: true // add this if u need to watch object properties change etc.
+      }
+    )
     if (this.$store.state.accessToken != null) {
       fetchProfile(this.$store)
-    }
-  },
-  computed: mapState({
-    token: state => state.accessToken,
-    profileName: state => state.displayName
-  }),
-  watch: {
-    token: 'fetchProfile',
-    profileName: 'test'
-  },
-  methods: {
-    fetchProfile: function () {
-      console.log('fetchProfile()')
-      fetchProfile(this.$store)
-    },
-    test: function () {
-      test(this.$store)
     }
   }
 }
@@ -32,8 +22,4 @@ function fetchProfile (store) {
   }).then(() => {
     console.log('done FETCH_USER_PROFILE in Header.vue')
   })
-}
-
-function test (store) {
-  console.log('test......()')
 }

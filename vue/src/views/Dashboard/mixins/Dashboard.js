@@ -19,8 +19,7 @@ export const Dashboard = {
 }
 
 function getProjects (store) {
-  console.log('userId...')
-  console.log(store.state.userId)
+  console.log('userId : ' + store.state.userId)
   awProject.getProjectsByUser(store.state.userId)
     .then(res => {
       console.log(res.data.data)
