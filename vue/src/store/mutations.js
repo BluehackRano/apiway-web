@@ -68,5 +68,13 @@ export default {
 
   SET_USER_ID: (state, { userId }) => {
     state.userId = userId
+  },
+
+  SET_DISPLAY_NAME: (state, { displayName }) => {
+    state.displayName = displayName
+  },
+
+  SET_ACCESS_TOKEN: (state, { token }) => {
+    state.accessToken = token
   }
 }

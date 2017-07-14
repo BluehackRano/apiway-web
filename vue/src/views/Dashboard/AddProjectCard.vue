@@ -3,10 +3,11 @@
 
 <script>
 
-export default {
-  name: 'projectCard',
-  mixins: [ProjectCard]
-}
+  import {AddProjectCard} from './mixins/AddProjectCard'
+  export default {
+    name: 'addProjectCard',
+    mixins: [AddProjectCard]
+  }
 </script>
 
 <style>

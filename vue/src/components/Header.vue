@@ -1,5 +1,8 @@
 <template>
   <navbar>
+    <p>
+      {{profileName}}
+    </p>
     <button class="navbar-toggler mobile-leftmenu-toggler hidden-lg-up" type="button" @click="mobileLeftMenuToggle">&#9776;</button>
     <a class="navbar-brand" href="#"></a>
     <ul class="nav navbar-nav hidden-md-down">
@@ -13,9 +16,11 @@
 
 import navbar from './Navbar'
 import { dropdown } from 'vue-strap'
+import { Header } from './mixins/Header'
 
 export default {
   name: 'header',
+  mixins: [Header],
   components: {
     navbar,
     dropdown

@@ -1,20 +1,17 @@
 <template>
     <div class="row">
-<!--         <div class="col-md-4" style="min-width: 20rem;">
-            <myProject/>
-        </div> -->
-        <div class="col-md-8">
-            <!--<Instance/>-->
-        </div>
+      <Projects/>
     </div>
 </template>
 
 <script>
 
   import Projects from './Projects'
+  import {Dashboard} from './mixins/Dashboard'
 
   export default {
     name: 'dashboard',
+    mixins: [Dashboard],
     components: {
       Projects
     }

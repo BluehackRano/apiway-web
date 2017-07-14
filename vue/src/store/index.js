@@ -9,11 +9,13 @@ Vue.use(Vuex)
 export function createStore () {
   return new Vuex.Store({
     state: {
+      accessToken: 'kkk',
       activeType: null,
       activeProjectId: null,
       activeInstanceId: null,
       itemsPerPage: 20,
-      userId: null,
+      userId: '596882f09815455b4ba447a5',
+      displayName: null,
       items: {/* [id: number]: Item */},
       orgs: {},
       profile: {},

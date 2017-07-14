@@ -13,7 +13,7 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
-    "apiway-sdk-js": "latest",
+    "apiway-sdk-js": "0.0.3",
     "firebase": "^3.7.2",
     "github-api": "^3.0.0",
     "gulp": "^3.9.1",

@@ -15,13 +15,15 @@
 </template>
 
 <script>
-import AppHeader from '../components/Header'
-import LeftMenu from '../components/LeftMenu'
-import AppFooter from '../components/Footer'
-import Breadcrumb from '../components/Breadcrumb'
+import AppHeader from '../../components/Header'
+import LeftMenu from '../../components/LeftMenu'
+import AppFooter from '../../components/Footer'
+import Breadcrumb from '../../components/Breadcrumb'
+import {Full} from './mixins/Full'
 
 export default {
   name: 'full',
+  mixins: [Full],
   components: {
     AppHeader,
     LeftMenu,

@@ -3,8 +3,8 @@
 
 <script>
 import {Projects} from './mixins/Projects'
-import {ProjectCard} from './mixins/ProjectCard'
-import {AddProjectCard} from './mixins/AddProjectCard'
+import ProjectCard from './ProjectCard'
+import AddProjectCard from './AddProjectCard'
 
 export default {
   name: 'projects',

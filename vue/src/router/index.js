@@ -4,7 +4,7 @@ import Resource from 'vue-resource'
 import VueAuthenticate from 'vue-authenticate'
 
 // Containers
-import Full from 'containers/Full'
+import Full from 'views/Full/Full'
 
 // Views
 import Login from 'views/Login'

@@ -63,6 +63,16 @@ export default {
       .then(profile => {
         console.log('FETCH_USER_PROFILE then in actions.js : profile = ' + JSON.stringify(profile))
         commit('SET_PROFILE', { profile })
+        console.log('data ...')
+        console.log(profile.login)
+        let displayName = profile.login
+        commit('SET_DISPLAY_NAME', { displayName })
+        updateUserProfile(state.profile)
+          .then((data) => {
+            console.log('UPDATE_USER_PROFILE: ' + JSON.stringify(data))
+            let userId = data.data.userId
+            commit('SET_USER_ID', { userId })
+          })
       })
   },
 
@@ -104,6 +114,10 @@ export default {
         let userId = data.data.userId
         commit('SET_USER_ID', { userId })
       })
+  },
+
+  UPDATE_ACCESS_TOKEN: ({ commit, state }, { token }) => {
+    commit('SET_ACCESS_TOKEN', { token })
   },
 
   ADD_PROJECT: ({ commit, state }, { repo }) => {
