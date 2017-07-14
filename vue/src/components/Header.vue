@@ -1,10 +1,10 @@
 <template>
   <navbar>
-    <button class="navbar-toggler mobile-sidebar-toggler hidden-lg-up" type="button" @click="mobileSidebarToggle">&#9776;</button>
+    <button class="navbar-toggler mobile-leftmenu-toggler hidden-lg-up" type="button" @click="mobileLeftMenuToggle">&#9776;</button>
     <a class="navbar-brand" href="#"></a>
     <ul class="nav navbar-nav hidden-md-down">
       <li class="nav-item">
-        <a class="nav-link navbar-toggler sidebar-toggler" href="#" @click="sidebarToggle">&#9776;</a>
+        <a class="nav-link navbar-toggler leftmenu-toggler" href="#" @click="leftmenuToggle">&#9776;</a>
       </li>
     </ul>
   </navbar>
@@ -24,13 +24,13 @@ export default {
     click () {
       // do nothing
     },
-    sidebarToggle (e) {
+    leftmenuToggle (e) {
       e.preventDefault()
-      document.body.classList.toggle('sidebar-hidden')
+      document.body.classList.toggle('leftmenu-hidden')
     },
-    mobileSidebarToggle (e) {
+    mobileLeftMenuToggle (e) {
       e.preventDefault()
-      document.body.classList.toggle('sidebar-mobile-show')
+      document.body.classList.toggle('leftmenu-mobile-show')
     },
     asideToggle (e) {
       e.preventDefault()

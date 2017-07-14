@@ -78,22 +78,22 @@
   }
 }
 
-@mixin sidebar-width($borders, $width) {
-  $sidebar-width: $width;
+@mixin leftmenu-width($borders, $width) {
+  $leftmenu-width: $width;
 
   @each $border in $borders {
     $direction: nth($border, 1);
     @if $direction == 'all' {
       $size: map-get(map-get($borders, $direction), size);
-      $sidebar-width: ( $sidebar-width - ( 2 * $size ));
+      $leftmenu-width: ( $leftmenu-width - ( 2 * $size ));
     } @else if $direction == 'right' {
       $size: map-get(map-get($borders, $direction), size);
-      $sidebar-width: $sidebar-width - $size;
+      $leftmenu-width: $leftmenu-width - $size;
     } @else if $direction == 'left' {
       $size: map-get(map-get($borders, $direction), size);
-      $sidebar-width: $sidebar-width - $size;
+      $leftmenu-width: $leftmenu-width - $size;
     }
-    width: $sidebar-width;
+    width: $leftmenu-width;
   }
 }
 

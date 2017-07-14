@@ -8,7 +8,7 @@ import Full from 'containers/Full'
 
 // Views
 import Login from 'views/Login'
-import Dashboard from 'views/Dashboard'
+import Dashboard from 'views/Dashboard/Dashboard'
 import Projects from 'views/Projects'
 import InstanceDetail from 'views/DashboardVues//InstanceDetail'
 import AddProject from 'views/ProjectsVues/AddProject'

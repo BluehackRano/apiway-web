@@ -31,7 +31,7 @@
 //       width: 100% !important;
 //       margin: 0 auto !important;
 //     }
-// 
+//
 //     .navbar-nav {
 //       position: absolute;
 //       top: 0;
@@ -40,16 +40,16 @@
 //     }
 //   }
 //
-//   .sidebar {
-//     left: -$mobile-sidebar-width !important;
-//     width: $mobile-sidebar-width !important;
+//   .leftmenu {
+//     left: -$mobile-leftmenu-width !important;
+//     width: $mobile-leftmenu-width !important;
 //
 //     ul.nav {
-//       width: $mobile-sidebar-width !important;
+//       width: $mobile-leftmenu-width !important;
 //     }
 //
-//     .sidebar-footer {
-//       margin-left: -$mobile-sidebar-width;
+//     .leftmenu-footer {
+//       margin-left: -$mobile-leftmenu-width;
 //     }
 //   }
 //
@@ -81,12 +81,12 @@
 //   body.mobile-open {
 //     max-width: 100%;
 //     overflow-x: hidden;
-//     .sidebar {
+//     .leftmenu {
 //       left: 0 !important;
 //     }
 //
 //     .main {
-//       margin-left: $mobile-sidebar-width !important;
+//       margin-left: $mobile-leftmenu-width !important;
 //     }
 //   }
 // }

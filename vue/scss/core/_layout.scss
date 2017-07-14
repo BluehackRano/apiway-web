@@ -33,9 +33,9 @@ app-root {
     flex: 1;
   }
 
-  .sidebar {
-    // $sidebar-width is the width of the columns
-    flex: 0 0 $sidebar-width;
+  .leftmenu {
+    // $leftmenu-width is the width of the columns
+    flex: 0 0 $leftmenu-width;
     // put the nav on the left
     order: -1;
   }
@@ -61,31 +61,31 @@ app-root {
 }
 
 //
-// Sidebar
+// LeftMenu
 //
-.sidebar-hidden {
+.leftmenu-hidden {
 
-  .sidebar {
-    margin-left: - $sidebar-width;
+  .leftmenu {
+    margin-left: - $leftmenu-width;
   }
 }
 
-.sidebar-fixed {
+.leftmenu-fixed {
 
-  .sidebar {
+  .leftmenu {
     position: fixed;
     height: 100%;
 
-    .sidebar-nav {
+    .leftmenu-nav {
       height: calc(100vh - #{$navbar-height});
     }
   }
 
   .main, .app-footer {
-    margin-left: $sidebar-width;
+    margin-left: $leftmenu-width;
   }
 
-  &.sidebar-hidden {
+  &.leftmenu-hidden {
 
     .main, .app-footer {
       margin-left: 0;
@@ -93,38 +93,38 @@ app-root {
   }
 }
 
-.sidebar-off-canvas {
-  .sidebar {
+.leftmenu-off-canvas {
+  .leftmenu {
     position: fixed;
     z-index: $zindex-navbar - 1;
     height: 100%;
 
 
-    .sidebar-nav {
+    .leftmenu-nav {
       height: calc(100vh - #{$navbar-height});
     }
   }
 }
 
-.sidebar-compact {
-  .sidebar {
-    flex: 0 0 $sidebar-compact-width;
+.leftmenu-compact {
+  .leftmenu {
+    flex: 0 0 $leftmenu-compact-width;
   }
 
-  &.sidebar-hidden {
+  &.leftmenu-hidden {
 
-    .sidebar {
-      margin-left: - $sidebar-compact-width;
+    .leftmenu {
+      margin-left: - $leftmenu-compact-width;
     }
   }
 
-  &.sidebar-fixed {
+  &.leftmenu-fixed {
 
     .main, .app-footer {
-      margin-left: $sidebar-compact-width;
+      margin-left: $leftmenu-compact-width;
     }
 
-    &.sidebar-hidden {
+    &.leftmenu-hidden {
 
       .main, .app-footer {
         margin-left: 0;
@@ -202,7 +202,7 @@ app-root {
 //
 .app-header,
 .app-footer,
-.sidebar,
+.leftmenu,
 .main,
 .aside-menu {
   transition-duration: $layout-transition-speed, $layout-transition-speed;
@@ -253,15 +253,15 @@ app-root {
     margin-top: $navbar-height;
   }
 
-  .sidebar {
+  .leftmenu {
     position: fixed;
-    width: $mobile-sidebar-width;
+    width: $mobile-leftmenu-width;
     height: 100%;
-    margin-left: - $mobile-sidebar-width;
+    margin-left: - $mobile-leftmenu-width;
 
-    .sidebar-nav,
+    .leftmenu-nav,
     .nav {
-      width: $mobile-sidebar-width !important;
+      width: $mobile-leftmenu-width !important;
     }
   }
 
@@ -273,20 +273,20 @@ app-root {
     margin-right: - $aside-menu-width;
   }
 
-  .sidebar-mobile-show {
+  .leftmenu-mobile-show {
 
-    .sidebar {
-      width: $mobile-sidebar-width;
+    .leftmenu {
+      width: $mobile-leftmenu-width;
       margin-left: 0;
 
-      .sidebar-nav {
+      .leftmenu-nav {
         height: calc(100vh - #{$navbar-height});
       }
     }
 
     .main {
-      margin-right: - $mobile-sidebar-width !important;
-      margin-left: $mobile-sidebar-width !important;
+      margin-right: - $mobile-leftmenu-width !important;
+      margin-left: $mobile-leftmenu-width !important;
     }
   }
 }

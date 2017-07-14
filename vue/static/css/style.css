@@ -11198,7 +11198,7 @@ app-root {
   overflow-x: hidden; }
   .app-body .main {
     flex: 1; }
-  .app-body .sidebar {
+  .app-body .leftmenu {
     flex: 0 0 100px;
     order: -1; }
   .app-body .aside-menu {
@@ -11212,38 +11212,38 @@ app-root {
 .header-fixed .app-body {
   margin-top: 50px; }
 
-.sidebar-hidden .sidebar {
+.leftmenu-hidden .leftmenu {
   margin-left: -100px; }
 
-.sidebar-fixed .sidebar {
+.leftmenu-fixed .leftmenu {
   position: fixed;
   height: 100%; }
-  .sidebar-fixed .sidebar .sidebar-nav {
+  .leftmenu-fixed .leftmenu .leftmenu-nav {
     height: calc(100vh - 50px); }
 
-.sidebar-fixed .main, .sidebar-fixed .app-footer {
+.leftmenu-fixed .main, .leftmenu-fixed .app-footer {
   margin-left: 100px; }
 
-.sidebar-fixed.sidebar-hidden .main, .sidebar-fixed.sidebar-hidden .app-footer {
+.leftmenu-fixed.leftmenu-hidden .main, .leftmenu-fixed.leftmenu-hidden .app-footer {
   margin-left: 0; }
 
-.sidebar-off-canvas .sidebar {
+.leftmenu-off-canvas .leftmenu {
   position: fixed;
   z-index: 999;
   height: 100%; }
-  .sidebar-off-canvas .sidebar .sidebar-nav {
+  .leftmenu-off-canvas .leftmenu .leftmenu-nav {
     height: calc(100vh - 50px); }
 
-.sidebar-compact .sidebar {
+.leftmenu-compact .leftmenu {
   flex: 0 0 50px; }
 
-.sidebar-compact.sidebar-hidden .sidebar {
+.leftmenu-compact.leftmenu-hidden .leftmenu {
   margin-left: -50px; }
 
-.sidebar-compact.sidebar-fixed .main, .sidebar-compact.sidebar-fixed .app-footer {
+.leftmenu-compact.leftmenu-fixed .main, .leftmenu-compact.leftmenu-fixed .app-footer {
   margin-left: 50px; }
 
-.sidebar-compact.sidebar-fixed.sidebar-hidden .main, .sidebar-compact.sidebar-fixed.sidebar-hidden .app-footer {
+.leftmenu-compact.leftmenu-fixed.leftmenu-hidden .main, .leftmenu-compact.leftmenu-fixed.leftmenu-hidden .app-footer {
   margin-left: 0; }
 
 .aside-menu-hidden .aside-menu {
@@ -11281,7 +11281,7 @@ app-root {
 
 .app-header,
 .app-footer,
-.sidebar,
+.leftmenu,
 .main,
 .aside-menu {
   transition-duration: 0.25s, 0.25s;
@@ -11310,32 +11310,32 @@ app-root {
       height: inherit; }
   .app-body {
     margin-top: 50px; }
-  .sidebar {
+  .leftmenu {
     position: fixed;
     width: 100px;
     height: 100%;
     margin-left: -100px; }
-    .sidebar .sidebar-nav,
-    .sidebar .nav {
+    .leftmenu .leftmenu-nav,
+    .leftmenu .nav {
       width: 100px !important; }
   .main, .app-footer {
     margin-left: 0 !important; }
   .aside-menu {
     margin-right: -250px; }
-  .sidebar-mobile-show .sidebar {
+  .leftmenu-mobile-show .leftmenu {
     width: 100px;
     margin-left: 0; }
-    .sidebar-mobile-show .sidebar .sidebar-nav {
+    .leftmenu-mobile-show .leftmenu .leftmenu-nav {
       height: calc(100vh - 50px); }
-  .sidebar-mobile-show .main {
+  .leftmenu-mobile-show .main {
     margin-right: -100px !important;
     margin-left: 100px !important; } }
 
-.sidebar {
+.leftmenu {
   padding: 0;
   color: #fff;
   background: #383e4b; }
-  .sidebar .sidebar-close {
+  .leftmenu .leftmenu-close {
     position: absolute;
     right: 0;
     display: none;
@@ -11347,84 +11347,84 @@ app-root {
     background: 0;
     border: 0;
     opacity: .8; }
-    .sidebar .sidebar-close:hover {
+    .leftmenu .leftmenu-close:hover {
       opacity: 1; }
-  .sidebar .sidebar-nav {
+  .leftmenu .leftmenu-nav {
     position: relative;
     overflow-x: hidden;
     overflow-y: auto;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     width: 100px; }
-    .sidebar .sidebar-nav::-webkit-scrollbar {
+    .leftmenu .leftmenu-nav::-webkit-scrollbar {
       position: absolute;
       width: 10px;
       margin-left: -10px;
       -webkit-appearance: none; }
-    .sidebar .sidebar-nav::-webkit-scrollbar-track {
+    .leftmenu .leftmenu-nav::-webkit-scrollbar-track {
       background-color: #434a5a;
       border-right: 1px solid #2d323c;
       border-left: 1px solid #2d323c; }
-    .sidebar .sidebar-nav::-webkit-scrollbar-thumb {
+    .leftmenu .leftmenu-nav::-webkit-scrollbar-thumb {
       height: 50px;
       background-color: #22262e;
       background-clip: content-box;
       border-color: transparent;
       border-style: solid;
       border-width: 1px 2px; }
-  .sidebar .nav {
+  .leftmenu .nav {
     width: 100px;
     flex-direction: column !important; }
-    .sidebar .nav .nav-title {
+    .leftmenu .nav .nav-title {
       padding: 0.95rem 1rem;
       font-size: 11px;
       font-weight: 600;
       color: #9da0a8;
       text-transform: uppercase; }
-    .sidebar .nav .divider {
+    .leftmenu .nav .divider {
       height: 10px; }
-    .sidebar .nav .nav-item {
+    .leftmenu .nav .nav-item {
       position: relative;
       margin: 0;
       transition: background .3s ease-in-out; }
-      .sidebar .nav .nav-item ul {
+      .leftmenu .nav .nav-item ul {
         max-height: 0;
         padding: 0;
         margin: 0;
         overflow-y: hidden;
         transition: max-height .3s ease-in-out; }
-        .sidebar .nav .nav-item ul li {
+        .leftmenu .nav .nav-item ul li {
           padding: 0;
           list-style: none; }
-      .sidebar .nav .nav-item .nav-link, .sidebar .nav .nav-item .navbar .dropdown-toggle, .navbar .sidebar .nav .nav-item .dropdown-toggle {
+      .leftmenu .nav .nav-item .nav-link, .leftmenu .nav .nav-item .navbar .dropdown-toggle, .navbar .leftmenu .nav .nav-item .dropdown-toggle {
         display: block;
         padding: 0.75rem 1rem;
         color: #fff;
         text-decoration: none;
         background: transparent; }
-        .sidebar .nav .nav-item .nav-link:hover, .sidebar .nav .nav-item .navbar .dropdown-toggle:hover, .navbar .sidebar .nav .nav-item .dropdown-toggle:hover {
+        .leftmenu .nav .nav-item .nav-link:hover, .leftmenu .nav .nav-item .navbar .dropdown-toggle:hover, .navbar .leftmenu .nav .nav-item .dropdown-toggle:hover {
           color: #fff !important;
           background: #22262e !important; }
-          .sidebar .nav .nav-item .nav-link:hover i, .sidebar .nav .nav-item .navbar .dropdown-toggle:hover i, .navbar .sidebar .nav .nav-item .dropdown-toggle:hover i {
+          .leftmenu .nav .nav-item .nav-link:hover i, .leftmenu .nav .nav-item .navbar .dropdown-toggle:hover i, .navbar .leftmenu .nav .nav-item .dropdown-toggle:hover i {
             color: #fff !important; }
-        .sidebar .nav .nav-item .nav-link.active, .sidebar .nav .nav-item .navbar .active.dropdown-toggle, .navbar .sidebar .nav .nav-item .active.dropdown-toggle {
+        .leftmenu .nav .nav-item .nav-link.active, .leftmenu .nav .nav-item .navbar .active.dropdown-toggle, .navbar .leftmenu .nav .nav-item .active.dropdown-toggle {
           color: #fff;
           background: #22262e; }
-          .sidebar .nav .nav-item .nav-link.active i, .sidebar .nav .nav-item .navbar .active.dropdown-toggle i, .navbar .sidebar .nav .nav-item .active.dropdown-toggle i {
+          .leftmenu .nav .nav-item .nav-link.active i, .leftmenu .nav .nav-item .navbar .active.dropdown-toggle i, .navbar .leftmenu .nav .nav-item .active.dropdown-toggle i {
             color: #fff; }
-        .sidebar .nav .nav-item .nav-link [class^="icon-"], .sidebar .nav .nav-item .navbar .dropdown-toggle [class^="icon-"], .navbar .sidebar .nav .nav-item .dropdown-toggle [class^="icon-"], .sidebar .nav .nav-item .nav-link [class*=" icon-"], .sidebar .nav .nav-item .navbar .dropdown-toggle [class*=" icon-"], .navbar .sidebar .nav .nav-item .dropdown-toggle [class*=" icon-"] {
+        .leftmenu .nav .nav-item .nav-link [class^="icon-"], .leftmenu .nav .nav-item .navbar .dropdown-toggle [class^="icon-"], .navbar .leftmenu .nav .nav-item .dropdown-toggle [class^="icon-"], .leftmenu .nav .nav-item .nav-link [class*=" icon-"], .leftmenu .nav .nav-item .navbar .dropdown-toggle [class*=" icon-"], .navbar .leftmenu .nav .nav-item .dropdown-toggle [class*=" icon-"] {
           display: inline-block;
           margin-top: -4px;
           vertical-align: middle; }
-        .sidebar .nav .nav-item .nav-link i, .sidebar .nav .nav-item .navbar .dropdown-toggle i, .navbar .sidebar .nav .nav-item .dropdown-toggle i {
+        .leftmenu .nav .nav-item .nav-link i, .leftmenu .nav .nav-item .navbar .dropdown-toggle i, .navbar .leftmenu .nav .nav-item .dropdown-toggle i {
           width: 20px;
           margin: 0 0.5rem 0 0;
           font-size: 13px;
           color: #9da0a8;
           text-align: center; }
-        .sidebar .nav .nav-item .nav-link .badge, .sidebar .nav .nav-item .navbar .dropdown-toggle .badge, .navbar .sidebar .nav .nav-item .dropdown-toggle .badge {
+        .leftmenu .nav .nav-item .nav-link .badge, .leftmenu .nav .nav-item .navbar .dropdown-toggle .badge, .navbar .leftmenu .nav .nav-item .dropdown-toggle .badge {
           float: right;
           margin-top: 2px; }
-        .sidebar .nav .nav-item .nav-link.nav-dropdown-toggle::before, .sidebar .nav .nav-item .navbar .nav-dropdown-toggle.dropdown-toggle::before, .navbar .sidebar .nav .nav-item .nav-dropdown-toggle.dropdown-toggle::before {
+        .leftmenu .nav .nav-item .nav-link.nav-dropdown-toggle::before, .leftmenu .nav .nav-item .navbar .nav-dropdown-toggle.dropdown-toggle::before, .navbar .leftmenu .nav .nav-item .nav-dropdown-toggle.dropdown-toggle::before {
           position: absolute;
           top: 0.96875rem;
           right: 1rem;
@@ -11437,67 +11437,67 @@ app-root {
           text-align: center;
           content: "\2039";
           transition: .3s; }
-      .sidebar .nav .nav-item.nav-dropdown.open {
+      .leftmenu .nav .nav-item.nav-dropdown.open {
         background: #2d323c; }
-        .sidebar .nav .nav-item.nav-dropdown.open > ul, .sidebar .nav .nav-item.nav-dropdown.open > ol {
+        .leftmenu .nav .nav-item.nav-dropdown.open > ul, .leftmenu .nav .nav-item.nav-dropdown.open > ol {
           max-height: 1000px; }
-        .sidebar .nav .nav-item.nav-dropdown.open a.nav-link, .sidebar .nav .nav-item.nav-dropdown.open .navbar a.dropdown-toggle, .navbar .sidebar .nav .nav-item.nav-dropdown.open a.dropdown-toggle {
+        .leftmenu .nav .nav-item.nav-dropdown.open a.nav-link, .leftmenu .nav .nav-item.nav-dropdown.open .navbar a.dropdown-toggle, .navbar .leftmenu .nav .nav-item.nav-dropdown.open a.dropdown-toggle {
           color: #fff;
           border-left: 0 !important; }
-        .sidebar .nav .nav-item.nav-dropdown.open > .nav-link.nav-dropdown-toggle::before, .sidebar .nav .navbar .nav-item.nav-dropdown.open > .nav-dropdown-toggle.dropdown-toggle::before, .navbar .sidebar .nav .nav-item.nav-dropdown.open > .nav-dropdown-toggle.dropdown-toggle::before {
+        .leftmenu .nav .nav-item.nav-dropdown.open > .nav-link.nav-dropdown-toggle::before, .leftmenu .nav .navbar .nav-item.nav-dropdown.open > .nav-dropdown-toggle.dropdown-toggle::before, .navbar .leftmenu .nav .nav-item.nav-dropdown.open > .nav-dropdown-toggle.dropdown-toggle::before {
           -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg); }
-        .sidebar .nav .nav-item.nav-dropdown.open .nav-dropdown.open {
+        .leftmenu .nav .nav-item.nav-dropdown.open .nav-dropdown.open {
           border-left: 0; }
-      .sidebar .nav .nav-item.nav-dropdown.nt {
+      .leftmenu .nav .nav-item.nav-dropdown.nt {
         transition: 0s !important; }
-        .sidebar .nav .nav-item.nav-dropdown.nt > ul, .sidebar .nav .nav-item.nav-dropdown.nt > ol {
+        .leftmenu .nav .nav-item.nav-dropdown.nt > ul, .leftmenu .nav .nav-item.nav-dropdown.nt > ol {
           transition: 0s !important; }
-        .sidebar .nav .nav-item.nav-dropdown.nt a.nav-link.nav-dropdown-toggle::before, .sidebar .nav .nav-item.nav-dropdown.nt .navbar a.nav-dropdown-toggle.dropdown-toggle::before, .navbar .sidebar .nav .nav-item.nav-dropdown.nt a.nav-dropdown-toggle.dropdown-toggle::before {
+        .leftmenu .nav .nav-item.nav-dropdown.nt a.nav-link.nav-dropdown-toggle::before, .leftmenu .nav .nav-item.nav-dropdown.nt .navbar a.nav-dropdown-toggle.dropdown-toggle::before, .navbar .leftmenu .nav .nav-item.nav-dropdown.nt a.nav-dropdown-toggle.dropdown-toggle::before {
           transition: 0s !important; }
-      .sidebar .nav .nav-item a.nav-label {
+      .leftmenu .nav .nav-item a.nav-label {
         display: block;
         padding: 0.09375rem 1rem;
         color: #9da0a8; }
-        .sidebar .nav .nav-item a.nav-label:hover {
+        .leftmenu .nav .nav-item a.nav-label:hover {
           color: #fff;
           text-decoration: none; }
-        .sidebar .nav .nav-item a.nav-label i {
+        .leftmenu .nav .nav-item a.nav-label i {
           width: 20px;
           margin: -3px 0.5rem 0 0;
           font-size: 10px;
           color: #9da0a8;
           text-align: center;
           vertical-align: middle; }
-      .sidebar .nav .nav-item .progress {
+      .leftmenu .nav .nav-item .progress {
         background-color: #596277 !important; }
 
 @media (min-width: 576px) {
-  body.sidebar-compact .hidden-cn {
+  body.leftmenu-compact .hidden-cn {
     display: none; }
-  body.sidebar-compact .sidebar {
+  body.leftmenu-compact .leftmenu {
     z-index: 999;
     width: 50px; }
-    body.sidebar-compact .sidebar .sidebar-nav {
+    body.leftmenu-compact .leftmenu .leftmenu-nav {
       overflow: visible; }
-    body.sidebar-compact .sidebar ul.nav li.nav-title, body.sidebar-compact .sidebar ul.nav li.divider {
+    body.leftmenu-compact .leftmenu ul.nav li.nav-title, body.leftmenu-compact .leftmenu ul.nav li.divider {
       display: none; }
-    body.sidebar-compact .sidebar ul.nav li.nav-item {
+    body.leftmenu-compact .leftmenu ul.nav li.nav-item {
       width: 50px;
       overflow: hidden;
       border-left: 0 !important; }
-      body.sidebar-compact .sidebar ul.nav li.nav-item ul {
+      body.leftmenu-compact .leftmenu ul.nav li.nav-item ul {
         background: #383e4b; }
-      body.sidebar-compact .sidebar ul.nav li.nav-item a.nav-link, body.sidebar-compact .sidebar ul.nav li.nav-item .navbar a.dropdown-toggle, .navbar body.sidebar-compact .sidebar ul.nav li.nav-item a.dropdown-toggle {
+      body.leftmenu-compact .leftmenu ul.nav li.nav-item a.nav-link, body.leftmenu-compact .leftmenu ul.nav li.nav-item .navbar a.dropdown-toggle, .navbar body.leftmenu-compact .leftmenu ul.nav li.nav-item a.dropdown-toggle {
         position: relative;
         padding: 0 15px 0 0;
         margin: 0;
         line-height: 50px;
         white-space: nowrap;
         border-left: 0 !important; }
-        body.sidebar-compact .sidebar ul.nav li.nav-item a.nav-link.nav-dropdown-toggle::before, body.sidebar-compact .sidebar ul.nav li.nav-item .navbar a.nav-dropdown-toggle.dropdown-toggle::before, .navbar body.sidebar-compact .sidebar ul.nav li.nav-item a.nav-dropdown-toggle.dropdown-toggle::before {
+        body.leftmenu-compact .leftmenu ul.nav li.nav-item a.nav-link.nav-dropdown-toggle::before, body.leftmenu-compact .leftmenu ul.nav li.nav-item .navbar a.nav-dropdown-toggle.dropdown-toggle::before, .navbar body.leftmenu-compact .leftmenu ul.nav li.nav-item a.nav-dropdown-toggle.dropdown-toggle::before {
           display: none; }
-        body.sidebar-compact .sidebar ul.nav li.nav-item a.nav-link i, body.sidebar-compact .sidebar ul.nav li.nav-item .navbar a.dropdown-toggle i, .navbar body.sidebar-compact .sidebar ul.nav li.nav-item a.dropdown-toggle i {
+        body.leftmenu-compact .leftmenu ul.nav li.nav-item a.nav-link i, body.leftmenu-compact .leftmenu ul.nav li.nav-item .navbar a.dropdown-toggle i, .navbar body.leftmenu-compact .leftmenu ul.nav li.nav-item a.dropdown-toggle i {
           display: block;
           float: left;
           width: 50px;
@@ -11506,50 +11506,50 @@ app-root {
           margin: 0 !important;
           font-size: 18px;
           line-height: 50px; }
-        body.sidebar-compact .sidebar ul.nav li.nav-item a.nav-link .badge, body.sidebar-compact .sidebar ul.nav li.nav-item .navbar a.dropdown-toggle .badge, .navbar body.sidebar-compact .sidebar ul.nav li.nav-item a.dropdown-toggle .badge {
+        body.leftmenu-compact .leftmenu ul.nav li.nav-item a.nav-link .badge, body.leftmenu-compact .leftmenu ul.nav li.nav-item .navbar a.dropdown-toggle .badge, .navbar body.leftmenu-compact .leftmenu ul.nav li.nav-item a.dropdown-toggle .badge {
           position: absolute;
           top: 14px;
           right: 15px;
           display: none; }
-        body.sidebar-compact .sidebar ul.nav li.nav-item a.nav-link:hover, body.sidebar-compact .sidebar ul.nav li.nav-item .navbar a.dropdown-toggle:hover, .navbar body.sidebar-compact .sidebar ul.nav li.nav-item a.dropdown-toggle:hover {
+        body.leftmenu-compact .leftmenu ul.nav li.nav-item a.nav-link:hover, body.leftmenu-compact .leftmenu ul.nav li.nav-item .navbar a.dropdown-toggle:hover, .navbar body.leftmenu-compact .leftmenu ul.nav li.nav-item a.dropdown-toggle:hover {
           width: 100px; }
-          body.sidebar-compact .sidebar ul.nav li.nav-item a.nav-link:hover .badge, body.sidebar-compact .sidebar ul.nav li.nav-item .navbar a.dropdown-toggle:hover .badge, .navbar body.sidebar-compact .sidebar ul.nav li.nav-item a.dropdown-toggle:hover .badge {
+          body.leftmenu-compact .leftmenu ul.nav li.nav-item a.nav-link:hover .badge, body.leftmenu-compact .leftmenu ul.nav li.nav-item .navbar a.dropdown-toggle:hover .badge, .navbar body.leftmenu-compact .leftmenu ul.nav li.nav-item a.dropdown-toggle:hover .badge {
             display: inline; }
-      body.sidebar-compact .sidebar ul.nav li.nav-item ul {
+      body.leftmenu-compact .leftmenu ul.nav li.nav-item ul {
         position: absolute;
         top: 50px;
         left: 50px; }
-        body.sidebar-compact .sidebar ul.nav li.nav-item ul li {
+        body.leftmenu-compact .leftmenu ul.nav li.nav-item ul li {
           position: relative;
           padding: 0; }
-          body.sidebar-compact .sidebar ul.nav li.nav-item ul li a.nav-link, body.sidebar-compact .sidebar ul.nav li.nav-item ul li .navbar a.dropdown-toggle, .navbar body.sidebar-compact .sidebar ul.nav li.nav-item ul li a.dropdown-toggle {
+          body.leftmenu-compact .leftmenu ul.nav li.nav-item ul li a.nav-link, body.leftmenu-compact .leftmenu ul.nav li.nav-item ul li .navbar a.dropdown-toggle, .navbar body.leftmenu-compact .leftmenu ul.nav li.nav-item ul li a.dropdown-toggle {
             width: 50px; }
-          body.sidebar-compact .sidebar ul.nav li.nav-item ul li ul, body.sidebar-compact .sidebar ul.nav li.nav-item ul li ol {
+          body.leftmenu-compact .leftmenu ul.nav li.nav-item ul li ul, body.leftmenu-compact .leftmenu ul.nav li.nav-item ul li ol {
             position: absolute;
             top: 0;
             left: 100%; }
-      body.sidebar-compact .sidebar ul.nav li.nav-item.nav-dropdown.open {
+      body.leftmenu-compact .leftmenu ul.nav li.nav-item.nav-dropdown.open {
         background: #22262e; }
-        body.sidebar-compact .sidebar ul.nav li.nav-item.nav-dropdown.open > a.nav-link i, body.sidebar-compact .sidebar ul.nav .navbar li.nav-item.nav-dropdown.open > a.dropdown-toggle i, .navbar body.sidebar-compact .sidebar ul.nav li.nav-item.nav-dropdown.open > a.dropdown-toggle i {
+        body.leftmenu-compact .leftmenu ul.nav li.nav-item.nav-dropdown.open > a.nav-link i, body.leftmenu-compact .leftmenu ul.nav .navbar li.nav-item.nav-dropdown.open > a.dropdown-toggle i, .navbar body.leftmenu-compact .leftmenu ul.nav li.nav-item.nav-dropdown.open > a.dropdown-toggle i {
           color: #fff; }
-        body.sidebar-compact .sidebar ul.nav li.nav-item.nav-dropdown.open > ul, body.sidebar-compact .sidebar ul.nav li.nav-item.nav-dropdown.open > ol {
+        body.leftmenu-compact .leftmenu ul.nav li.nav-item.nav-dropdown.open > ul, body.leftmenu-compact .leftmenu ul.nav li.nav-item.nav-dropdown.open > ol {
           display: none; }
-      body.sidebar-compact .sidebar ul.nav li.nav-item:hover {
+      body.leftmenu-compact .leftmenu ul.nav li.nav-item:hover {
         width: 150px;
         overflow: visible;
         background: #22262e;
         transition: 0s; }
-        body.sidebar-compact .sidebar ul.nav li.nav-item:hover > a.nav-link, body.sidebar-compact .sidebar ul.nav .navbar li.nav-item:hover > a.dropdown-toggle, .navbar body.sidebar-compact .sidebar ul.nav li.nav-item:hover > a.dropdown-toggle {
+        body.leftmenu-compact .leftmenu ul.nav li.nav-item:hover > a.nav-link, body.leftmenu-compact .leftmenu ul.nav .navbar li.nav-item:hover > a.dropdown-toggle, .navbar body.leftmenu-compact .leftmenu ul.nav li.nav-item:hover > a.dropdown-toggle {
           width: 150px; }
-        body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ul, body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ol {
+        body.leftmenu-compact .leftmenu ul.nav li.nav-item:hover > ul, body.leftmenu-compact .leftmenu ul.nav li.nav-item:hover > ol {
           display: inline;
           max-height: 10000px;
           transition: 0s; }
-          body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ul li, body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ol li {
+          body.leftmenu-compact .leftmenu ul.nav li.nav-item:hover > ul li, body.leftmenu-compact .leftmenu ul.nav li.nav-item:hover > ol li {
             width: 100px; }
-            body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ul li a.nav-link, body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ul li .navbar a.dropdown-toggle, .navbar body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ul li a.dropdown-toggle, body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ol li a.nav-link, body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ol li .navbar a.dropdown-toggle, .navbar body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ol li a.dropdown-toggle {
+            body.leftmenu-compact .leftmenu ul.nav li.nav-item:hover > ul li a.nav-link, body.leftmenu-compact .leftmenu ul.nav li.nav-item:hover > ul li .navbar a.dropdown-toggle, .navbar body.leftmenu-compact .leftmenu ul.nav li.nav-item:hover > ul li a.dropdown-toggle, body.leftmenu-compact .leftmenu ul.nav li.nav-item:hover > ol li a.nav-link, body.leftmenu-compact .leftmenu ul.nav li.nav-item:hover > ol li .navbar a.dropdown-toggle, .navbar body.leftmenu-compact .leftmenu ul.nav li.nav-item:hover > ol li a.dropdown-toggle {
               width: 100px; }
-        body.sidebar-compact .sidebar ul.nav li.nav-item:hover.nav-dropdown.open > ul, body.sidebar-compact .sidebar ul.nav li.nav-item:hover.nav-dropdown.open > ol {
+        body.leftmenu-compact .leftmenu ul.nav li.nav-item:hover.nav-dropdown.open > ul, body.leftmenu-compact .leftmenu ul.nav li.nav-item:hover.nav-dropdown.open > ol {
           display: inline; } }
 
 nav.top-nav {
@@ -13791,17 +13791,17 @@ header.navbar > .img-avatar {
   height: 36px;
   margin: -3px 10px 0 10px; }
 
-nav.sidebar-nav .form-control, nav.sidebar-nav .daterangepicker .input-mini, .daterangepicker nav.sidebar-nav .input-mini, nav.sidebar-nav .input-group > .ui-select-bootstrap > input.ui-select-search.form-control {
+nav.leftmenu-nav .form-control, nav.leftmenu-nav .daterangepicker .input-mini, .daterangepicker nav.leftmenu-nav .input-mini, nav.leftmenu-nav .input-group > .ui-select-bootstrap > input.ui-select-search.form-control {
   border: 0;
   background: #22262e;
   color: #fff; }
-  nav.sidebar-nav .form-control::-webkit-input-placeholder, nav.sidebar-nav .daterangepicker .input-mini::-webkit-input-placeholder, .daterangepicker nav.sidebar-nav .input-mini::-webkit-input-placeholder, nav.sidebar-nav .input-group > .ui-select-bootstrap > input.ui-select-search.form-control::-webkit-input-placeholder {
+  nav.leftmenu-nav .form-control::-webkit-input-placeholder, nav.leftmenu-nav .daterangepicker .input-mini::-webkit-input-placeholder, .daterangepicker nav.leftmenu-nav .input-mini::-webkit-input-placeholder, nav.leftmenu-nav .input-group > .ui-select-bootstrap > input.ui-select-search.form-control::-webkit-input-placeholder {
     color: rgba(255, 255, 255, 0.7); }
-  nav.sidebar-nav .form-control:-moz-placeholder, nav.sidebar-nav .daterangepicker .input-mini:-moz-placeholder, .daterangepicker nav.sidebar-nav .input-mini:-moz-placeholder, nav.sidebar-nav .input-group > .ui-select-bootstrap > input.ui-select-search.form-control:-moz-placeholder {
+  nav.leftmenu-nav .form-control:-moz-placeholder, nav.leftmenu-nav .daterangepicker .input-mini:-moz-placeholder, .daterangepicker nav.leftmenu-nav .input-mini:-moz-placeholder, nav.leftmenu-nav .input-group > .ui-select-bootstrap > input.ui-select-search.form-control:-moz-placeholder {
     color: rgba(255, 255, 255, 0.7); }
-  nav.sidebar-nav .form-control::-moz-placeholder, nav.sidebar-nav .daterangepicker .input-mini::-moz-placeholder, .daterangepicker nav.sidebar-nav .input-mini::-moz-placeholder, nav.sidebar-nav .input-group > .ui-select-bootstrap > input.ui-select-search.form-control::-moz-placeholder {
+  nav.leftmenu-nav .form-control::-moz-placeholder, nav.leftmenu-nav .daterangepicker .input-mini::-moz-placeholder, .daterangepicker nav.leftmenu-nav .input-mini::-moz-placeholder, nav.leftmenu-nav .input-group > .ui-select-bootstrap > input.ui-select-search.form-control::-moz-placeholder {
     color: rgba(255, 255, 255, 0.7); }
-  nav.sidebar-nav .form-control:-ms-input-placeholder, nav.sidebar-nav .daterangepicker .input-mini:-ms-input-placeholder, .daterangepicker nav.sidebar-nav .input-mini:-ms-input-placeholder, nav.sidebar-nav .input-group > .ui-select-bootstrap > input.ui-select-search.form-control:-ms-input-placeholder {
+  nav.leftmenu-nav .form-control:-ms-input-placeholder, nav.leftmenu-nav .daterangepicker .input-mini:-ms-input-placeholder, .daterangepicker nav.leftmenu-nav .input-mini:-ms-input-placeholder, nav.leftmenu-nav .input-group > .ui-select-bootstrap > input.ui-select-search.form-control:-ms-input-placeholder {
     color: rgba(255, 255, 255, 0.7); }
 
 .card, .social-box {

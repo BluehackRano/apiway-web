@@ -27,7 +27,7 @@
  </template>
 
 <script>
-import vueModule from '../../views/FunctionModule/vueModule'
+  import vueModule from '../../views/FunctionModule/vueModule'
 
 export default {
   extends: vueModule

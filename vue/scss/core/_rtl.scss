@@ -45,22 +45,22 @@
   }
 
   //
-  // Sidebar
+  // LeftMenu
   //
-  .sidebar-hidden {
+  .leftmenu-hidden {
 
-    .sidebar {
-      margin-right: - $sidebar-width;
+    .leftmenu {
+      margin-right: - $leftmenu-width;
     }
   }
 
-  .sidebar-fixed {
+  .leftmenu-fixed {
 
     .main, .app-footer {
-      margin-right: $sidebar-width;
+      margin-right: $leftmenu-width;
     }
 
-    &.sidebar-hidden {
+    &.leftmenu-hidden {
 
       .main, .app-footer {
         margin-right: 0;
@@ -68,25 +68,25 @@
     }
   }
 
-  .sidebar-compact {
-    .sidebar {
-      flex: 0 0 $sidebar-compact-width;
+  .leftmenu-compact {
+    .leftmenu {
+      flex: 0 0 $leftmenu-compact-width;
     }
 
-    &.sidebar-hidden {
+    &.leftmenu-hidden {
 
-      .sidebar {
-        margin-left: - $sidebar-compact-width;
+      .leftmenu {
+        margin-left: - $leftmenu-compact-width;
       }
     }
 
-    &.sidebar-fixed {
+    &.leftmenu-fixed {
 
       .main, .app-footer {
-        margin-left: $sidebar-compact-width;
+        margin-left: $leftmenu-compact-width;
       }
 
-      &.sidebar-hidden {
+      &.leftmenu-hidden {
 
         .main, .app-footer {
           margin-left: 0;
@@ -139,9 +139,9 @@
     }
   }
 
-  // Sidebar Menu
-  .sidebar {
-    .sidebar-nav {
+  // LeftMenu Menu
+  .leftmenu {
+    .leftmenu-nav {
       direction: ltr;
       * {
         direction: rtl;
@@ -161,7 +161,7 @@
               &::before {
                 position: absolute;
                 right: auto !important;
-                left: $sidebar-nav-link-padding-x;
+                left: $leftmenu-nav-link-padding-x;
               }
             }
           }

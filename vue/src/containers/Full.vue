@@ -2,7 +2,7 @@
   <div class="app">
     <AppHeader/>
     <div class="app-body">
-      <Sidebar/>
+      <LeftMenu/>
       <main class="main">
         <breadcrumb :list="list"/>
         <div class="container-fluid">
@@ -16,7 +16,7 @@
 
 <script>
 import AppHeader from '../components/Header'
-import Sidebar from '../components/Sidebar'
+import LeftMenu from '../components/LeftMenu'
 import AppFooter from '../components/Footer'
 import Breadcrumb from '../components/Breadcrumb'
 
@@ -24,7 +24,7 @@ export default {
   name: 'full',
   components: {
     AppHeader,
-    Sidebar,
+    LeftMenu,
     AppFooter,
     Breadcrumb
   },

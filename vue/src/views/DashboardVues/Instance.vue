@@ -36,3 +36,4 @@ export default {
     border-radius: 3px;
     box-shadow: 0 0 10px 0 rgba(53, 58, 73, 0.20); }
 
+</style>
