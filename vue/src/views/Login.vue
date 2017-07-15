@@ -22,8 +22,7 @@ let auth = require('../util/auth')
 export default {
   name: 'Login',
   beforeCreate: function () {
-    console.log('beforeCreate')
-
+    console.log('Login: beforeCreate')
     if (auth.isAuthenticated()) {
       this.$store.dispatch('FETCH_USER_PROFILE', {
         token: auth.getToken()
@@ -40,7 +39,8 @@ export default {
   methods: {
     requestLogin: function (provider) {
       // To do : get access-token from the Sphinx.js
-      let aToken = 'e17f923b6bb09f01b1002337fd1c2b9cfe283ff7'
+      let aToken = '31ce843fd31edfc1683d0f263624d10d3d2d7620'
+      // let aToken = '31ce843fd31edfc1683d0f263624d10d3d2d7'
 
       // init the accessToken
       auth.setToken(aToken)
@@ -63,8 +63,8 @@ export default {
         this.accessToken = this_.token
 
         this.requestLogin(provider)
-      }).catch(function (err) {
-        this_.response = err
+      }).catch(err => {
+        console.error(err)
       })
     }
 

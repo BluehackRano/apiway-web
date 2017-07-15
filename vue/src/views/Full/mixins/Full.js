@@ -2,10 +2,10 @@ let auth = require('../../../util/auth')
 
 export const Full = {
   beforeCreate: function () {
-    // if (!auth.isAuthenticated()) {
-    //   console.log('go to Login')
-    //   this.$router.replace('/login')
-    // }
+    console.log('Full: beforeCreate')
+    if (!auth.isAuthenticated()) {
+      this.$router.replace('/login')
+    }
 
     restoreFromLocalStorage(this.$store)
   }
