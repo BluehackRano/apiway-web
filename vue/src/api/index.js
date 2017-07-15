@@ -3,6 +3,8 @@ import { createAPI } from 'create-api'
 import GitHub from 'github-api'
 import ApiWay from 'apiway-sdk-js'
 
+let auth = require('../util/auth')
+
 const logRequests = !!process.env.DEBUG_API
 
 const api = createAPI({
@@ -82,6 +84,7 @@ export function fetchProfile (token) {
       console.log(profile.data)
       resolve(profile.data)
     }).catch(err => {
+      auth.clear()
       console.error(err)
       reject(err)
     })

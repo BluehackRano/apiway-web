@@ -12,3 +12,7 @@ export function isAuthenticated () {
   }
   return false
 }
+
+export function clear () {
+  return localStorage.removeItem('access-token')
+}
