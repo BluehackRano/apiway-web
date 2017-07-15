@@ -9,7 +9,7 @@ Vue.use(Vuex)
 export function createStore () {
   return new Vuex.Store({
     state: {
-      accessToken: 'kkk',
+      accessToken: null,
       activeType: null,
       activeProjectId: null,
       activeInstanceId: null,
