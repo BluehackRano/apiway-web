@@ -16,8 +16,9 @@
 </template>
 
 <script>
-// var Sphinx = require('sphinx-js')
+// let Sphinx = require('sphinx-js')
 let auth = require('../util/auth')
+let popupTools = require('popup-tools')
 
 export default {
   name: 'Login',
@@ -39,19 +40,45 @@ export default {
   methods: {
     requestLogin: function (provider) {
       // To do : get access-token from the Sphinx.js
-      let aToken = '31ce843fd31edfc1683d0f263624d10d3d2d7620'
-      // let aToken = '31ce843fd31edfc1683d0f263624d10d3d2d7'
+      // let aToken = 'cdd33843effdef6346d77cdc8fa32ec232987c3d'
+      this.requestAccessToken(provider)
 
       // init the accessToken
-      auth.setToken(aToken)
-      this.$store.dispatch('FETCH_USER_PROFILE', {
-        token: aToken
-      }).then(() => {
-        this.$router.replace('/dashboard')
-      })
+//      auth.setToken(aToken)
+//      this.$store.dispatch('FETCH_USER_PROFILE', {
+//        token: aToken
+//      }).then(() => {
+//        this.$router.replace('/dashboard')
+//      })
     },
 
-    // To do : remove this method
+    requestAccessToken: function (provider) {
+      console.log('Provider ... ', provider)
+      // d
+      popupTools.popup('http://sphinx.bluehack.net:3000/apiway/oauth/github', 'Github Popup', { width: 400, height: 100 }, function (err, user) {
+        if (err) {
+          alert(err.message)
+        } else {
+          alert('finished')
+          console.log('FINISHOED!!!')
+        }
+        console.log(user)
+        console.log('called !!!')
+      })
+//      const spx = new Sphinx()
+//      let sphinxAuth = spx.getAuthenticate()
+//      sphinxAuth.authenticate('apiway', provider)
+//        .then(res => {
+//          // Promise !
+//          // Do something
+//          console.log('response...')
+//          console.log(res)
+//        })
+//        .catch(() => {
+//          console.log('Sphinx error...')
+//        })
+    },
+
     auth: function (provider) {
       this.response = null
 
