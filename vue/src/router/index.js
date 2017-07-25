@@ -12,6 +12,7 @@ import Dashboard from 'views/Dashboard/Dashboard'
 import Projects from 'views/Projects'
 import InstanceDetail from 'views/DashboardVues//InstanceDetail'
 import AddProject from 'views/ProjectsVues/AddProject'
+import AddProjectCard from 'views/Dashboard/AddProjectCard'
 
 Vue.use(Router)
 Vue.use(Resource)
@@ -21,7 +22,7 @@ Vue.use(VueAuthenticate, {
     // Define OAuth providers config
     github: {
       clientId: '40b12bd8b129cc8803e3',
-      redirectUri: 'http://apiway.io',
+      redirectUri: 'http://app.apiway.io',
       scope: ['user', 'repo']
     }
   }
@@ -83,9 +84,9 @@ export function createRouter () {
     routes: [
       {
         path: '/',
-        redirect: '/dashboard',
-        name: 'Home',
+        name: 'Full',
         component: Full,
+        redirect: '/dashboard',
         children: [
           {
             path: 'dashboard',
@@ -99,6 +100,11 @@ export function createRouter () {
           },
           {
             path: 'projects/add',
+            name: 'addProjectCard',
+            component: AddProjectCard
+          },
+          {
+            path: 'projects/adddd',
             name: 'Projects Add',
             component: AddProject
           },
@@ -114,11 +120,12 @@ export function createRouter () {
         path: '/login',
         name: 'Login',
         component: Login
-      },
-      {
-        path: '*',
-        redirect: '/'
       }
+      // ,
+      // {
+      //   path: '*',
+      //   redirect: '/'
+      // }
     ]
   })
 }

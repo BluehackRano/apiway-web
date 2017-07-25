@@ -1,7 +1,6 @@
 <template>
   <navbar>
     <p>
-      {{profileName}}
     </p>
     <button class="navbar-toggler mobile-leftmenu-toggler hidden-lg-up" type="button" @click="mobileLeftMenuToggle">&#9776;</button>
     <a class="navbar-brand" href="#"></a>

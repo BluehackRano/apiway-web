@@ -18,7 +18,6 @@
 <script>
 // let Sphinx = require('sphinx-js')
 let auth = require('../util/auth')
-let popupTools = require('popup-tools')
 
 export default {
   name: 'Login',
@@ -54,17 +53,6 @@ export default {
 
     requestAccessToken: function (provider) {
       console.log('Provider ... ', provider)
-      // d
-      popupTools.popup('http://sphinx.bluehack.net:3000/apiway/oauth/github', 'Github Popup', { width: 400, height: 100 }, function (err, user) {
-        if (err) {
-          alert(err.message)
-        } else {
-          alert('finished')
-          console.log('FINISHOED!!!')
-        }
-        console.log(user)
-        console.log('called !!!')
-      })
 //      const spx = new Sphinx()
 //      let sphinxAuth = spx.getAuthenticate()
 //      sphinxAuth.authenticate('apiway', provider)

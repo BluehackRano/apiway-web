@@ -13,14 +13,13 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
-    "apiway-sdk-js": "latest",
+    "apiway-sdk-js": "0.0.4",
     "firebase": "^3.7.2",
     "github-api": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^3.1.0",
-    "popup-tools": "^1.0.2",
-    "sphinx-js": "0.0.7",
+    "sphinx-js": "0.0.9",
     "vue": "^2.2.5",
     "vue-authenticate": "^1.2.4",
     "vue-chartjs": "^2.3.7",

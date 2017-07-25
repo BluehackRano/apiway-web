@@ -1,7 +1,7 @@
 <template>
-    <div class="row">
-      <Projects/>
-    </div>
+  <div class="row">
+    <Projects/>
+  </div>
 </template>
 
 <script>

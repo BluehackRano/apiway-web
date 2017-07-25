@@ -5,7 +5,7 @@ let awProject = aw.getProject()
 export const Dashboard = {
 
   beforeCreate: function () {
-    console.log('beforeCreate')
+    console.log('Dashboard: beforeCreate')
     let store = this.$store
     this.$store.watch(this.$store.getters.userId,
       () => {
@@ -15,6 +15,17 @@ export const Dashboard = {
         deep: true // add this if u need to watch object properties change etc.
       }
     )
+
+    if (this.$store.getters.userId) {
+      getProjects(store)
+    }
+  },
+
+  methods: {
+    toAddProject: function () {
+      console.log('on click to dashboard button')
+      this.$router.push('/projects/add')
+    }
   }
 }
 
